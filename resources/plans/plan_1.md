@@ -5,8 +5,6 @@
 ### Структура каталогов
 ### Первый маршрут контроллер и view.
 ### Роутинг
-### Artisan
-### Миграции
 
 ## Ссылки
 [Фреймворк](https://highload.today/frejmvorki-v-veb-razrabotke/)
@@ -21,3 +19,4 @@
 ### Запуск сервера `php artisan serve`
 ### Создание контроллера `php artisan make:controller MainController`
 
+План по установке приложения:
