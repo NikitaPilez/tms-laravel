@@ -14,9 +14,9 @@
 [Структура каталогов](https://laravel.su/docs/8.x/structure)
 [Роутинг](https://laravel.su/docs/8.x/routing)
 
-## Команды
-### Установка Laravel `composer create-project laravel/laravel tms-project`
-### Запуск сервера `php artisan serve`
-### Создание контроллера `php artisan make:controller MainController`
-
-План по установке приложения:
+## План по установке приложения:
+* Клонируем приложение через git clone
+* Копируем .env.example в .env и заполняем нужные данные (например доступы к БД)
+* генерируем ключ `php artisan key:generate`
+* накатываем зависимости `composer install`
+* запускаем сервер `php artisan serve`
