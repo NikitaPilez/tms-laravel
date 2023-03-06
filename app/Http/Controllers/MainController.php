@@ -24,4 +24,14 @@ class MainController extends Controller
     {
         return view('checkout');
     }
+
+    public function contacts()
+    {
+
+    }
+
+    public function sales()
+    {
+
+    }
 }
