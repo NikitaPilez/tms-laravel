@@ -27,11 +27,16 @@ class MainController extends Controller
 
     public function contacts()
     {
-
+        return view('contacts');
     }
 
     public function sales()
     {
 
+    }
+
+    public function about()
+    {
+        return view('about');
     }
 }
