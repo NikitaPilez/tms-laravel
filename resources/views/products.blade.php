@@ -130,7 +130,7 @@
                                     </a>
                                 </div>
                                 <div class="product-description">
-                                    <div class="product-category">{{ $product->category->name }}</div>
+                                    <div class="product-category">{{ $product->category?->name }}</div>
                                     <div class="product-title">
                                         <h3><a href="#">{{ $product->name }}</a></h3>
                                     </div>

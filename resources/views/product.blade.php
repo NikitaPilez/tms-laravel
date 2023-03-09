@@ -9,7 +9,7 @@
                             <!-- Carousel slider -->
                             <div class="carousel dots-inside dots-dark arrows-visible" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
                                 @foreach($product->images as $image)
-                                    <a href="{{ $image->image }}" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="{{ $image->image }}">
+                                    <a href="{{ $image->id }}" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="{{ $image->image }}">
                                     </a>
                                 @endforeach
                             </div>

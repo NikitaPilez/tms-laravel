@@ -25,7 +25,7 @@ class ProductController extends Controller
             ->groupBy('categories.id')
             ->get();
 
-        $latestProducts = Product::query()->orderBy('created_at', 'DESC')->take(3)->get();
+        $latestProducts = Product::query()->where('is_active', 1)->orderBy('created_at', 'DESC')->take(3)->get();
 
         return view('products', [
             'products' => $products,
