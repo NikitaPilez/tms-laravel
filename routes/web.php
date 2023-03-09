@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,7 @@ Route::group(['prefix' => '/products', 'controller' => ProductController::class]
     Route::get('/{product}', 'product')->name('products.show');
 });
 
+Route::get('/wishlist', [UserController::class, 'wishlist'])->name('wishlist');
 Route::get('/cart', [MainController::class, 'cart'])->name('cart');
 Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
 Route::get('/contacts', [MainController::class, 'contacts'])->name('contacts');
