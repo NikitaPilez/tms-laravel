@@ -8,7 +8,7 @@
                     <div class="slide-captions text-center text-light">
                         <h1>{{ $banner->title }}</h1>
                         <p>{{ $banner->description }}</p>
-                        <div><a href="#welcome" class="btn scroll-to">Explore more</a></div>
+                        <div><a href="{{ route('products.index') }}" class="btn scroll-to">Show catalog</a></div>
                         </span>
                     </div>
                 </div>
