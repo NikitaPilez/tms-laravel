@@ -70,13 +70,15 @@
                                         <div class="product-image">
                                             <a href="{{ route('products.show', ['product' => $product->id]) }}"><img alt="Shop product image!" src="{{ $product->image }}">
                                             </a>
-                                            <span class="product-new">NEW</span>
+                                            @if(Carbon\Carbon::parse($product->created_at)->diffInDays(now()) > 3)
+                                                <span class="product-new">NEW</span>
+                                            @endif
                                             <span class="product-wishlist">
                                                 <a href="#"><i class="fa fa-heart"></i></a>
                                             </span>
-                                            <div class="product-overlay">
-                                                <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick View</a>
-                                            </div>
+{{--                                            <div class="product-overlay">--}}
+{{--                                                <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick View</a>--}}
+{{--                                            </div>--}}
                                         </div>
                                         <div class="product-description">
                                             <div class="product-category">{{ $product->category?->name }}</div>
@@ -92,8 +94,8 @@
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star-half-o"></i>
                                             </div>
-                                            <div class="product-reviews"><a href="#">6 customer reviews</a>
-                                            </div>
+{{--                                            <div class="product-reviews"><a href="#">6 customer reviews</a>--}}
+{{--                                            </div>--}}
                                         </div>
                                     </div>
                                 </div>
@@ -122,87 +124,37 @@
                     <div class="widget widget-archive">
                         <h4 class="widget-title">Product categories</h4>
                         <ul class="list list-lines">
-                            <li><a href="#">Bags</a> <span class="count">(6)</span>
-                            </li>
-                            <li><a href="#">Jeans</a> <span class="count">(8)</span>
-                            </li>
-                            <li><a href="#">Shoes</a> <span class="count">(7)</span>
-                            </li>
-                            <li><a href="#">Sweaters</a> <span class="count">(7)</span>
-                            </li>
-                            <li><a href="#">T-Shirts</a> <span class="count">(9)</span>
-                            </li>
-                            <li><a href="#">Tops</a> <span class="count">(10)</span>
-                            </li>
-                            <li><a href="#">Women</a> <span class="count">(25)</span>
-                            </li>
+                            @foreach($categories as $category)
+                                <li><a href="#">{{ $category->name }}</a> <span class="count">( {{ $category->count }} )</span>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                     <div class="widget widget-shop">
                         <h4 class="widget-title">Latest Products</h4>
-                        <div class="product">
-                            <div class="product-image">
-                                <a href="#"><img src="images/shop/products/10.jpg" alt="Shop product image!">
-                                </a>
-                            </div>
-                            <div class="product-description">
-                                <div class="product-category">Women</div>
-                                <div class="product-title">
-                                    <h3><a href="#">Bolt Sweatshirt</a></h3>
+                        @foreach($latestProducts as $product)
+                            <div class="product">
+                                <div class="product-image">
+                                    <a href="{{ route('products.show', ['product' => $product->id]) }}"><img src="{{ $product->image }}" alt="{{ $product->name }}">
+                                    </a>
                                 </div>
-                                <div class="product-price"><del>$30.00</del><ins>$15.00</ins>
-                                </div>
-                                <div class="product-rate">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="product">
-                            <div class="product-image">
-                                <a href="#"><img src="images/shop/products/6.jpg" alt="Shop product image!">
-                                </a>
-                            </div>
-                            <div class="product-description">
-                                <div class="product-category">Women</div>
-                                <div class="product-title">
-                                    <h3><a href="#">Consume Tshirt</a></h3>
-                                </div>
-                                <div class="product-price"><ins>$39.00</ins>
-                                </div>
-                                <div class="product-rate">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
+                                <div class="product-description">
+                                    <div class="product-category">{{ $product->category->name }}</div>
+                                    <div class="product-title">
+                                        <h3><a href="#">{{ $product->name }}</a></h3>
+                                    </div>
+                                    <div class="product-price"><del>$30.00</del><ins>$15.00</ins>
+                                    </div>
+                                    <div class="product-rate">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-half-o"></i>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="product">
-                            <div class="product-image">
-                                <a href="#"><img src="images/shop/products/7.jpg" alt="Shop product image!">
-                                </a>
-                            </div>
-                            <div class="product-description">
-                                <div class="product-category">Man</div>
-                                <div class="product-title">
-                                    <h3><a href="#">Logo Tshirt</a></h3>
-                                </div>
-                                <div class="product-price"><ins>$39.00</ins>
-                                </div>
-                                <div class="product-rate">
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star"></i>
-                                    <i class="fa fa-star-half-o"></i>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                     <div class="widget widget-tags">
                         <h4 class="widget-title">Tags</h4>
