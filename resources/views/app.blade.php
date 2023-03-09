@@ -13,7 +13,7 @@
 </head>
 <body>
 <div class="body-inner">
-    <header id="header" data-transparent="true" data-fullwidth="true" class="dark submenu-light">
+    <header id="header" @if ($isDarkHeader) data-transparent='true' @endif data-fullwidth="true" class="@if ($isDarkHeader) dark @endif submenu-light">
         <div class="header-inner">
             <div class="container">
                 <div id="logo">

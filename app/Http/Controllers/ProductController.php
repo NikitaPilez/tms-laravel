@@ -20,7 +20,7 @@ class ProductController extends Controller
         $products = Product::query()->where('is_active', 1)->get();
 
         $categories = DB::table('categories')
-            ->selectRaw('count(categories.id) as count, categories.name as name')
+            ->selectRaw('categories.id, count(categories.id) as count, categories.name as name')
             ->leftJoin('products', 'categories.id', '=', 'products.category_id')
             ->groupBy('categories.id')
             ->get();

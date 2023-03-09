@@ -8,22 +8,17 @@
             </div>
             <div class="breadcrumb">
                 <ul>
-                    <li><a href="#">Home</a>
+                    <li><a href="{{ route('main') }}">Home</a>
                     </li>
-                    <li><a href="#">Shop</a>
-                    </li>
-                    <li class="active"><a href="#">Sticky Sidebar</a>
+                    <li class="active"><a href="{{ route('products.index') }}">Shop</a>
                     </li>
                 </ul>
             </div>
         </div>
     </section>
-    <!-- end: Page title -->
-    <!-- Shop products -->
     <section id="page-content" class="sidebar-right">
         <div class="container">
             <div class="row">
-                <!-- Content-->
                 <div class="content col-lg-9">
                     <div class="row m-b-20">
                         <div class="col-lg-6 p-t-10 m-b-20">
@@ -61,14 +56,13 @@
                             </div>
                         </div>
                     </div>
-                    <!--Product list-->
                     <div class="shop">
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
                             @foreach($products as $product)
                                 <div class="grid-item">
                                     <div class="product">
                                         <div class="product-image">
-                                            <a href="{{ route('products.show', ['product' => $product->id]) }}"><img alt="Shop product image!" src="{{ $product->image }}">
+                                            <a href="{{ route('products.show', ['product' => $product->id]) }}"><img alt="{{ $product->title }}" src="{{ $product->image }}">
                                             </a>
                                             @if(Carbon\Carbon::parse($product->created_at)->diffInDays(now()) > 3)
                                                 <span class="product-new">NEW</span>
@@ -76,9 +70,6 @@
                                             <span class="product-wishlist">
                                                 <a href="#"><i class="fa fa-heart"></i></a>
                                             </span>
-{{--                                            <div class="product-overlay">--}}
-{{--                                                <a href="shop-product-ajax-page.html" data-lightbox="ajax">Quick View</a>--}}
-{{--                                            </div>--}}
                                         </div>
                                         <div class="product-description">
                                             <div class="product-category">{{ $product->category?->name }}</div>
@@ -125,7 +116,7 @@
                         <h4 class="widget-title">Product categories</h4>
                         <ul class="list list-lines">
                             @foreach($categories as $category)
-                                <li><a href="#">{{ $category->name }}</a> <span class="count">( {{ $category->count }} )</span>
+                                <li><a href="{{ route('products.category', ['category' => $category->id]) }}">{{ $category->name }}</a> <span class="count">( {{ $category->count }} )</span>
                                 </li>
                             @endforeach
                         </ul>
