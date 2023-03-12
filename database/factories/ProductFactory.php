@@ -18,10 +18,10 @@ class ProductFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => $this->faker->title(),
-            'description' => $this->faker->paragraph(),
-            'category_id' => Category::factory(),
-            'image' => 'sf',
+            'title' => $this->faker->word(),
+            'description' => $this->faker->text(),
+            'category_id' => Category::query()->inRandomOrder()->first()->id,
+            'image' => 'https://source.unsplash.com/random/640x480',
             'is_active' => 1
         ];
     }
