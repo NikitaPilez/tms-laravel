@@ -1,18 +1,13 @@
-## Laravel
-### Установка Laravel и первый запуск приложения
-### Конфигурация приложения
-### Развертывание приложение с помощью OpenServer
-### Структура каталогов
-### Первый маршрут контроллер и view.
-### Роутинг
-
-## Ссылки
-[Фреймворк](https://highload.today/frejmvorki-v-veb-razrabotke/)
-[Документация Laravel](https://laravel.com/docs/10.x/installation)
 [Документация Laravel на русском](https://laravel.su/docs/8.x/installation)
 [Конфигурация приложения](https://laravel.su/docs/8.x/configuration)
 [Структура каталогов](https://laravel.su/docs/8.x/structure)
 [Роутинг](https://laravel.su/docs/8.x/routing)
+[Контроллеры](https://laravel.su/docs/8.x/controllers)
+[View](https://laravel.su/docs/8.x/views)
+[Шаблонизатор blade](https://laravel.su/docs/8.x/blade)
+[Работа с моделями](https://laravel.su/docs/8.x/eloquent)
+[Отношения в моделях](https://laravel.su/docs/8.x/eloquent-relationships)
+[Миграции](https://laravel.su/docs/8.x/migrations)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone
