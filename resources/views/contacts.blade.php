@@ -15,8 +15,6 @@
         </div>
     </div>
 </section>
-<!-- end: Page title -->
-<!-- CONTENT -->
 <section>
     <div class="container">
         <div class="row">
@@ -45,10 +43,6 @@
                             <label for="message">Message</label>
                             <textarea type="text" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
                         </div>
-                        <!--  <div class="form-group">
-                            <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                            <div class="g-recaptcha" data-sitekey="6LddCxAUAAAAAKOg0-U6IprqOZ7vTfiMNSyQT2-M"></div>
-                        </div>  -->
                         <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                     </form>
                 </div>
@@ -76,5 +70,5 @@
             </div>
         </div>
     </div>
-</section> <!-- end: Content -->
+</section>
 @endsection

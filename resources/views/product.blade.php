@@ -6,14 +6,12 @@
                 <div class="row m-b-40">
                     <div class="col-lg-5">
                         <div class="product-image">
-                            <!-- Carousel slider -->
                             <div class="carousel dots-inside dots-dark arrows-visible" data-items="1" data-loop="true" data-autoplay="true" data-animate-in="fadeIn" data-animate-out="fadeOut" data-autoplay="2500" data-lightbox="gallery">
                                 @foreach($product->images as $image)
                                     <a href="{{ $image->id }}" data-lightbox="image" title="Shop product image!"><img alt="Shop product image!" src="{{ $image->image }}">
                                     </a>
                                 @endforeach
                             </div>
-                            <!-- Carousel slider -->
                         </div>
                     </div>
                     <div class="col-lg-7">
@@ -22,7 +20,7 @@
                             <div class="product-title">
                                 <h3><a href="#">{{ $product->title }}</a></h3>
                             </div>
-                            <div class="product-price"><ins>$39.00</ins>
+                            <div class="product-price"><ins>{{ $product->price }}$</ins>
                             </div>
                             <div class="product-rate">
                                 <i class="fa fa-star"></i>
@@ -31,10 +29,10 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star-half-o"></i>
                             </div>
-                            <div class="product-reviews"><a href="#">3 customer reviews</a>
+                            <div class="product-reviews"><a href="#">{{ count($product->reviews) }} customer reviews</a>
                             </div>
                             <div class="seperator m-b-10"></div>
-                            <p>{{ $product->description }}</p>
+                            <p>{{ $product->short_description }}</p>
                             <div class="product-meta">
                                 <p>Tags: <a href="#" rel="tag">Clothing</a>, <a rel="tag" href="#">T-shirts</a>
                                 </p>
@@ -63,16 +61,7 @@
                     </ul>
                     <div class="tab-content" id="myTabContent3">
                         <div class="tab-pane fade active show" id="home3" role="tabpanel" aria-labelledby="home-tab">
-                            <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
-                                minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis
-                                dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum
-                                necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
-                                recusandae. </p>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
-                                occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt
-                                mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et
-                                expedita distinctio.</p>
+                            {{ $product->description }}
                         </div>
                         <div class="tab-pane fade " id="profile3" role="tabpanel" aria-labelledby="profile-tab">
                             <table class="table table-striped table-bordered">
@@ -137,7 +126,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- end: Product additional tabs -->
             </div>
         </div>
     </section>

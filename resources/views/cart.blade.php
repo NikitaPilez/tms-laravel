@@ -33,7 +33,6 @@
                             </tbody>
                         </table>
                     </div>
-
                     <div class="cart-footer d-flex mt-30">
                         <div class="back-to-shop w-50">
                             <a href="shop-grid-left-sidebar.html">Continue shooping</a>
@@ -46,7 +45,6 @@
 
                 </div>
             </div>
-
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="coupon-code-area mt-70">
@@ -66,17 +64,14 @@
                             <h5>Shipping method</h5>
                             <p>Select the one you want</p>
                         </div>
-
                         <div class="custom-control custom-radio mb-30">
                             <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
                             <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span>Next day delivery</span><span>$4.99</span></label>
                         </div>
-
                         <div class="custom-control custom-radio mb-30">
                             <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
                             <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span>Standard delivery</span><span>$1.99</span></label>
                         </div>
-
                         <div class="custom-control custom-radio">
                             <input type="radio" id="customRadio3" name="customRadio" class="custom-control-input">
                             <label class="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span>Personal Pickup</span><span>Free</span></label>
@@ -89,7 +84,6 @@
                             <h5>Cart total</h5>
                             <p>Final info</p>
                         </div>
-
                         <ul class="cart-total-chart">
                             <li><span>Subtotal</span> <span>$59.90</span></li>
                             <li><span>Shipping</span> <span>Free</span></li>

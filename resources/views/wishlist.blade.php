@@ -18,7 +18,6 @@
         </div>
     </div>
 </section>
-
 <section id="shop-cart">
     <div class="container">
         <div class="p-t-10 m-b-20 text-center">
@@ -29,7 +28,6 @@
         </div>
     </div>
 </section>
-
 <section id="shop-wishlist">
     <div class="container">
         <div class="shop-cart">

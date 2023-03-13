@@ -76,17 +76,22 @@
                                             <div class="product-title">
                                                 <h3><a href="#">{{ $product->title }}</a></h3>
                                             </div>
-                                            <div class="product-price"><ins>$15.00</ins>
+                                            <div class="product-price">
+                                                <ins>
+                                                    @if($product->sale_price)
+                                                        ${{ $product->sale_price }}
+                                                    @else
+                                                        ${{ $product->price }}
+                                                    @endif
+                                                </ins>
                                             </div>
                                             <div class="product-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
+                                                @for($i = 0; $i < $product->averageReviews(); $i++)
+                                                    <i class="fa fa-star"></i>
+                                                @endfor
                                             </div>
-{{--                                            <div class="product-reviews"><a href="#">6 customer reviews</a>--}}
-{{--                                            </div>--}}
+                                            <div class="product-reviews"><a href="#">{{ count($product->reviews) }} customer reviews</a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +99,6 @@
 
                         </div>
                         <hr>
-                        <!-- Pagination -->
                         <ul class="pagination">
                             <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
@@ -104,14 +108,9 @@
                             <li class="page-item"><a class="page-link" href="#">5</a></li>
                             <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
                         </ul>
-                        <!-- end: Pagination -->
                     </div>
-                    <!--End: Product list-->
                 </div>
-                <!-- end: Content-->
-                <!-- Sidebar-->
                 <div class="sidebar sticky-sidebar col-lg-3">
-                    <!--widget newsletter-->
                     <div class="widget widget-archive">
                         <h4 class="widget-title">Product categories</h4>
                         <ul class="list list-lines">
@@ -134,14 +133,12 @@
                                     <div class="product-title">
                                         <h3><a href="#">{{ $product->name }}</a></h3>
                                     </div>
-                                    <div class="product-price"><del>$30.00</del><ins>$15.00</ins>
+                                    <div class="product-price"><del>${{ $product->sale_price }}</del><ins>${{ $product->price }}</ins>
                                     </div>
                                     <div class="product-rate">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star-half-o"></i>
+                                        @for($i = 0; $i < $product->averageReviews(); $i++)
+                                            <i class="fa fa-star"></i>
+                                        @endfor
                                     </div>
                                 </div>
                             </div>
@@ -174,12 +171,9 @@
                             </div>
                         </form>
                     </div>
-                    <!-- end: Sidebar-->
                 </div>
             </div>
     </section>
-    <!-- end: Shop products -->
-    <!-- DELIVERY INFO -->
     <section class="background-grey p-t-40 p-b-0">
         <div class="container">
             <div class="row">

@@ -9,7 +9,6 @@
                         <h1>{{ $banner->title }}</h1>
                         <p>{{ $banner->description }}</p>
                         <div><a href="{{ route('products.index') }}" class="btn scroll-to">Show catalog</a></div>
-                        </span>
                     </div>
                 </div>
             </div>
