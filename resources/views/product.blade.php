@@ -34,7 +34,10 @@
                             <div class="seperator m-b-10"></div>
                             <p>{{ $product->short_description }}</p>
                             <div class="product-meta">
-                                <p>Tags: <a href="#" rel="tag">Clothing</a>, <a rel="tag" href="#">T-shirts</a>
+                                <p>Tags:
+                                    @foreach($product->tags as $tag)
+                                        <a href="#" rel="tag">{{$tag->title}}</a>
+                                    @endforeach
                                 </p>
                             </div>
                             <div class="seperator m-t-20 m-b-10"></div>
