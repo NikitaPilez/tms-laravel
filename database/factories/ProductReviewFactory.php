@@ -22,7 +22,8 @@ class ProductReviewFactory extends Factory
             'product_id' => Product::query()->inRandomOrder()->first()->id,
             'text' => $this->faker->text(),
             'user_id' => User::query()->inRandomOrder()->first()->id,
-            'is_active' => 1
+            'is_active' => 1,
+            'star_count' => rand(1, 5)
         ];
     }
 }

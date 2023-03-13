@@ -23,21 +23,22 @@
                             <div class="product-price"><ins>{{ $product->price }}$</ins>
                             </div>
                             <div class="product-rate">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
+                                @for($i = 0; $i < $product->averageReviews(); $i++)
+                                    <i class="fa fa-star"></i>
+                                @endfor
                             </div>
                             <div class="product-reviews"><a href="#">{{ count($product->reviews) }} customer reviews</a>
                             </div>
                             <div class="seperator m-b-10"></div>
                             <p>{{ $product->short_description }}</p>
                             <div class="product-meta">
-                                <p>Tags:
-                                    @foreach($product->tags as $tag)
-                                        <a href="#" rel="tag">{{$tag->title}}</a>
-                                    @endforeach
+                                <p>
+                                    @if(count($product->tags))
+                                        Tags:
+                                        @foreach($product->tags as $tag)
+                                            <a href="#" rel="tag">{{$tag->title}}</a>
+                                        @endforeach
+                                    @endif
                                 </p>
                             </div>
                             <div class="seperator m-t-20 m-b-10"></div>

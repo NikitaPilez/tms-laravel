@@ -6,3 +6,6 @@
 ### Накатить миграции `php artisan migrate`
 ### Откатить n миграций `php artisan migrate:rollback --step=n`
 ### Создание моделей `php artisan make:model Student`
+### Создание сида `php artisan make:seed ProductsTableSeeder`
+### Запуска всех сидов `php artisan db:seed`
+### Запуска конкретного сида `php artisan db:seed --class=TestSeeder`
