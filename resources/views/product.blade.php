@@ -111,77 +111,27 @@
                         <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab">
                             <div class="comments" id="comments">
                                 <div class="comment_number">
-                                    Reviews <span>(3)</span>
+                                    Reviews <span>({{ count($product->reviews) }})</span>
                                 </div>
                                 <div class="comment-list">
-                                    <!-- Comment -->
-                                    <div class="comment" id="comment-1">
-                                        <div class="image"><img alt="" src="images/blog/author.jpg" class="avatar">
-                                        </div>
-                                        <div class="text">
-                                            <div class="product-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
+                                    @foreach($product->reviews as $review)
+                                        <div class="comment" id="comment-1">
+                                            <div class="image"><img alt="" src="{{ $review->user->image }}" class="avatar">
                                             </div>
-                                            <h5 class="name">John Doe</h5>
-                                            <span class="comment_date">Posted at 15:32h, 06 December</span>
-                                            <a class="comment-reply-link" href="#">Reply</a>
-                                            <div class="text_holder">
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                                                    industry. Lorem Ipsum has been the industry's standard dummy
-                                                    text ever since the 1500s.</p>
+                                            <div class="text">
+                                                <div class="product-rate">
+                                                    @for ($i = 0; $i < $review->star_count; $i++)
+                                                        <i class="fa fa-star"></i>
+                                                    @endfor
+                                                </div>
+                                                <h5 class="name">{{ $review->user->name }}</h5>
+                                                <span class="comment_date">{{ Carbon\Carbon::parse($review->created_at)->format('d M Y H:i') }}</span>
+                                                <div class="text_holder">
+                                                    <p>{{ $review->text }}</p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- end: Comment -->
-                                    <!-- Comment -->
-                                    <div class="comment" id="comment-1-1">
-                                        <div class="image"><img alt="" src="images/blog/author2.jpg" class="avatar">
-                                        </div>
-                                        <div class="text">
-                                            <div class="product-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <h5 class="name">John Doe</h5>
-                                            <span class="comment_date">Posted at 15:32h, 06 December</span>
-                                            <a class="comment-reply-link" href="#">Reply</a>
-                                            <div class="text_holder">
-                                                <p>It is a long established fact that a reader will be distracted by
-                                                    the readable content.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end: Comment -->
-                                    <!-- Comment -->
-                                    <div class="comment" id="comment-1-2">
-                                        <div class="image"><img alt="" src="images/blog/author3.jpg" class="avatar">
-                                        </div>
-                                        <div class="text">
-                                            <div class="product-rate">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star-half-o"></i>
-                                            </div>
-                                            <h5 class="name">John Doe</h5>
-                                            <span class="comment_date">Posted at 15:32h, 06 December</span>
-                                            <a class="comment-reply-link" href="#">Reply</a>
-                                            <div class="text_holder">
-                                                <p>There are many variations of passages of Lorem Ipsum available,
-                                                    but the majority have suffered alteration in some form, by
-                                                    injected humour.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- end: Comment -->
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
