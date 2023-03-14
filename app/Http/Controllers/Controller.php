@@ -15,7 +15,9 @@ class Controller extends BaseController
     CONST DARK_HEADER_ROUTES = [
         'about',
         'contacts',
-        'main'
+        'main',
+        'auth.loginPage',
+        'auth.registerPage'
     ];
 
     public function __construct()

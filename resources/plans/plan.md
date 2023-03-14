@@ -8,6 +8,7 @@
 [Работа с моделями](https://laravel.su/docs/8.x/eloquent)
 [Отношения в моделях](https://laravel.su/docs/8.x/eloquent-relationships)
 [Миграции](https://laravel.su/docs/8.x/migrations)
+[Аутентификация](https://laravel.su/docs/8.x/authentication)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone

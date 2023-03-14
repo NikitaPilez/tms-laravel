@@ -10,6 +10,7 @@
     <title>POLO | The Multi-Purpose HTML5 Template</title>
     <link href="{{ asset('/css/plugins.css') }}" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('/css/custom.css') }}" rel="stylesheet">
 </head>
 <body>
 <div class="body-inner">
@@ -55,6 +56,14 @@
                                 <li><a href="{{ route('about') }}">About us</a></li>
                                 <li><a href="{{ route('contacts') }}">Contacts</a></li>
                                 <li><a href="{{ route('products.index') }}">Catalog</a></li>
+                                @auth
+                                    <li><a href="{{ route('products.index') }}">My account</a></li>
+                                    <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+                                @endauth
+                                @guest
+                                    <li><a href="{{ route('auth.login') }}">Login</a></li>
+                                    <li><a href="{{ route('auth.register') }}">Register</a></li>
+                                @endguest
                             </ul>
                         </nav>
                     </div>
