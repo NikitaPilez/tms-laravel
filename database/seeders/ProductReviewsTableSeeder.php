@@ -14,7 +14,7 @@ class ProductReviewsTableSeeder extends Seeder
     public function run(): void
     {
         ProductReview::factory()
-            ->count(5)
+            ->count(20)
             ->create();
     }
 }
