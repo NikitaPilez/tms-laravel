@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="INSPIRO" />
     <meta name="description" content="Themeforest Template Polo, html template">
-    <link rel="icon" type="image/png" href="{{ 'images/favicon.png' }}">
+    <link rel="icon" type="image/png" href="{{ 'img/favicon.png' }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>POLO | The Multi-Purpose HTML5 Template</title>
     <link href="{{ asset('/css/plugins.css') }}" rel="stylesheet">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
@@ -20,6 +21,11 @@ Route::group(['controller' => AuthController::class], function () {
     Route::get('/register', 'getRegisterPage')->name('auth.registerPage');
     Route::post('/register', 'register')->name('auth.register');
     Route::get('/logout', 'logout')->name('auth.logout');
+});
+
+Route::group(['controller' => AccountController::class], function () {
+    Route::get('/account', 'account')->name('account.show');
+    Route::post('/account', 'updateAccount')->name('account.update');
 });
 
 Route::get('/wishlist', [UserController::class, 'wishlist'])->name('wishlist');

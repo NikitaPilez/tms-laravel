@@ -1,0 +1,1217 @@
+{
+  "AD": {
+    "name": "Andorra",
+    "native": "Andorra",
+    "telcode": "+376"
+  },
+  "AE": {
+    "name": "United Arab Emirates",
+    "native": "‫الإمارات العربية المتحدة‬‎",
+    "telcode": "+971"
+  },
+  "AF": {
+    "name": "Afghanistan",
+    "native": "‫افغانستان‬‎",
+    "telcode": "+93"
+  },
+  "AG": {
+    "name": "Antigua and Barbuda",
+    "native": "Antigua and Barbuda",
+    "telcode": "+1268"
+  },
+  "AI": {
+    "name": "Anguilla",
+    "native": "Anguilla",
+    "telcode": "+1264"
+  },
+  "AL": {
+    "name": "Albania",
+    "native": "Shqipëri",
+    "telcode": "+355"
+  },
+  "AM": {
+    "name": "Armenia",
+    "native": "Հայաստան",
+    "telcode": "+374"
+  },
+  "AO": {
+    "name": "Angola",
+    "native": "Angola",
+    "telcode": "+244"
+  },
+  "AR": {
+    "name": "Argentina",
+    "native": "Argentina",
+    "telcode": "+54"
+  },
+  "AS": {
+    "name": "American Samoa",
+    "native": "American Samoa",
+    "telcode": "+1684"
+  },
+  "AT": {
+    "name": "Austria",
+    "native": "Österreich",
+    "telcode": "+43"
+  },
+  "AU": {
+    "name": "Australia",
+    "native": "Australia",
+    "telcode": "+61"
+  },
+  "AW": {
+    "name": "Aruba",
+    "native": "Aruba",
+    "telcode": "+297"
+  },
+  "AX": {
+    "name": "Åland Islands",
+    "native": "Åland Islands",
+    "telcode": "+358"
+  },
+  "AZ": {
+    "name": "Azerbaijan",
+    "native": "Azərbaycan",
+    "telcode": "+994"
+  },
+  "BA": {
+    "name": "Bosnia and Herzegovina",
+    "native": "Босна и Херцеговина",
+    "telcode": "+387"
+  },
+  "BB": {
+    "name": "Barbados",
+    "native": "Barbados",
+    "telcode": "+1246"
+  },
+  "BD": {
+    "name": "Bangladesh",
+    "native": "বাংলাদেশ",
+    "telcode": "+880"
+  },
+  "BE": {
+    "name": "Belgium",
+    "native": "België",
+    "telcode": "+32"
+  },
+  "BF": {
+    "name": "Burkina Faso",
+    "native": "Burkina Faso",
+    "telcode": "+226"
+  },
+  "BG": {
+    "name": "Bulgaria",
+    "native": "България",
+    "telcode": "+359"
+  },
+  "BH": {
+    "name": "Bahrain",
+    "native": "‫البحرين‬‎",
+    "telcode": "+973"
+  },
+  "BI": {
+    "name": "Burundi",
+    "native": "Uburundi",
+    "telcode": "+257"
+  },
+  "BJ": {
+    "name": "Benin",
+    "native": "Bénin",
+    "telcode": "+229"
+  },
+  "BL": {
+    "name": "Saint Barthélemy",
+    "native": "Saint-Barthélemy",
+    "telcode": "+590"
+  },
+  "BM": {
+    "name": "Bermuda",
+    "native": "Bermuda",
+    "telcode": "+1441"
+  },
+  "BN": {
+    "name": "Brunei",
+    "native": "Brunei",
+    "telcode": "+673"
+  },
+  "BO": {
+    "name": "Bolivia",
+    "native": "Bolivia",
+    "telcode": "+591"
+  },
+  "BQ": {
+    "name": "Caribbean Netherlands",
+    "native": "Caribbean Netherlands",
+    "telcode": "+599"
+  },
+  "BR": {
+    "name": "Brazil",
+    "native": "Brasil",
+    "telcode": "+55"
+  },
+  "BS": {
+    "name": "Bahamas",
+    "native": "Bahamas",
+    "telcode": "+1242"
+  },
+  "BT": {
+    "name": "Bhutan",
+    "native": "འབྲུག",
+    "telcode": "+975"
+  },
+  "BW": {
+    "name": "Botswana",
+    "native": "Botswana",
+    "telcode": "+267"
+  },
+  "BY": {
+    "name": "Belarus",
+    "native": "Беларусь",
+    "telcode": "+375"
+  },
+  "BZ": {
+    "name": "Belize",
+    "native": "Belize",
+    "telcode": "+501"
+  },
+  "CA": {
+    "name": "Canada",
+    "native": "Canada",
+    "telcode": "+1"
+  },
+  "CC": {
+    "name": "Cocos",
+    "native": "Keeling",
+    "telcode": "+61"
+  },
+  "CD": {
+    "name": "Congo",
+    "native": "DRC",
+    "telcode": "+243"
+  },
+  "CF": {
+    "name": "Central African Republic",
+    "native": "République centrafricaine",
+    "telcode": "+236"
+  },
+  "CG": {
+    "name": "Congo",
+    "native": "Republic",
+    "telcode": "+242"
+  },
+  "CH": {
+    "name": "Switzerland",
+    "native": "Schweiz",
+    "telcode": "+41"
+  },
+  "CI": {
+    "name": "Côte d’Ivoire",
+    "native": "Côte d’Ivoire",
+    "telcode": "+225"
+  },
+  "CK": {
+    "name": "Cook Islands",
+    "native": "Cook Islands",
+    "telcode": "+682"
+  },
+  "CL": {
+    "name": "Chile",
+    "native": "Chile",
+    "telcode": "+56"
+  },
+  "CM": {
+    "name": "Cameroon",
+    "native": "Cameroun",
+    "telcode": "+237"
+  },
+  "CN": {
+    "name": "China",
+    "native": "中国",
+    "telcode": "+86"
+  },
+  "CO": {
+    "name": "Colombia",
+    "native": "Colombia",
+    "telcode": "+57"
+  },
+  "CR": {
+    "name": "Costa Rica",
+    "native": "Costa Rica",
+    "telcode": "+506"
+  },
+  "CU": {
+    "name": "Cuba",
+    "native": "Cuba",
+    "telcode": "+53"
+  },
+  "CV": {
+    "name": "Cape Verde",
+    "native": "Kabu Verdi",
+    "telcode": "+238"
+  },
+  "CW": {
+    "name": "Curaçao",
+    "native": "Curaçao",
+    "telcode": "+599"
+  },
+  "CX": {
+    "name": "Christmas Island",
+    "native": "Christmas Island",
+    "telcode": "+61"
+  },
+  "CY": {
+    "name": "Cyprus",
+    "native": "Κύπρος",
+    "telcode": "+357"
+  },
+  "CZ": {
+    "name": "Czech Republic",
+    "native": "Česká republika",
+    "telcode": "+420"
+  },
+  "DE": {
+    "name": "Germany",
+    "native": "Deutschland",
+    "telcode": "+49"
+  },
+  "DJ": {
+    "name": "Djibouti",
+    "native": "Djibouti",
+    "telcode": "+253"
+  },
+  "DK": {
+    "name": "Denmark",
+    "native": "Danmark",
+    "telcode": "+45"
+  },
+  "DM": {
+    "name": "Dominica",
+    "native": "Dominica",
+    "telcode": "+1767"
+  },
+  "DO": {
+    "name": "Dominican Republic",
+    "native": "República Dominicana",
+    "telcode": "+1"
+  },
+  "DZ": {
+    "name": "Algeria",
+    "native": "‫الجزائر‬‎",
+    "telcode": "+213"
+  },
+  "EC": {
+    "name": "Ecuador",
+    "native": "Ecuador",
+    "telcode": "+593"
+  },
+  "EE": {
+    "name": "Estonia",
+    "native": "Eesti",
+    "telcode": "+372"
+  },
+  "EG": {
+    "name": "Egypt",
+    "native": "‫مصر‬‎",
+    "telcode": "+20"
+  },
+  "EH": {
+    "name": "Western Sahara",
+    "native": "‫الصحراء الغربية‬‎",
+    "telcode": "+212"
+  },
+  "ER": {
+    "name": "Eritrea",
+    "native": "Eritrea",
+    "telcode": "+291"
+  },
+  "ES": {
+    "name": "Spain",
+    "native": "España",
+    "telcode": "+34"
+  },
+  "ET": {
+    "name": "Ethiopia",
+    "native": "Ethiopia",
+    "telcode": "+251"
+  },
+  "FI": {
+    "name": "Finland",
+    "native": "Suomi",
+    "telcode": "+358"
+  },
+  "FJ": {
+    "name": "Fiji",
+    "native": "Fiji",
+    "telcode": "+679"
+  },
+  "FK": {
+    "name": "Falkland Islands",
+    "native": "Islas Malvinas",
+    "telcode": "+500"
+  },
+  "FM": {
+    "name": "Micronesia",
+    "native": "Micronesia",
+    "telcode": "+691"
+  },
+  "FO": {
+    "name": "Faroe Islands",
+    "native": "Føroyar",
+    "telcode": "+298"
+  },
+  "FR": {
+    "name": "France",
+    "native": "France",
+    "telcode": "+33"
+  },
+  "GA": {
+    "name": "Gabon",
+    "native": "Gabon",
+    "telcode": "+241"
+  },
+  "GB": {
+    "name": "United Kingdom",
+    "native": "United Kingdom",
+    "telcode": "+44"
+  },
+  "GD": {
+    "name": "Grenada",
+    "native": "Grenada",
+    "telcode": "+1473"
+  },
+  "GE": {
+    "name": "Georgia",
+    "native": "საქართველო",
+    "telcode": "+995"
+  },
+  "GF": {
+    "name": "French Guiana",
+    "native": "Guyane française",
+    "telcode": "+594"
+  },
+  "GG": {
+    "name": "Guernsey",
+    "native": "Guernsey",
+    "telcode": "+44"
+  },
+  "GH": {
+    "name": "Ghana",
+    "native": "Gaana",
+    "telcode": "+233"
+  },
+  "GI": {
+    "name": "Gibraltar",
+    "native": "Gibraltar",
+    "telcode": "+350"
+  },
+  "GL": {
+    "name": "Greenland",
+    "native": "Kalaallit Nunaat",
+    "telcode": "+299"
+  },
+  "GM": {
+    "name": "Gambia",
+    "native": "Gambia",
+    "telcode": "+220"
+  },
+  "GN": {
+    "name": "Guinea",
+    "native": "Guinée",
+    "telcode": "+224"
+  },
+  "GP": {
+    "name": "Guadeloupe",
+    "native": "Guadeloupe",
+    "telcode": "+590"
+  },
+  "GQ": {
+    "name": "Equatorial Guinea",
+    "native": "Guinea Ecuatorial",
+    "telcode": "+240"
+  },
+  "GR": {
+    "name": "Greece",
+    "native": "Ελλάδα",
+    "telcode": "+30"
+  },
+  "GT": {
+    "name": "Guatemala",
+    "native": "Guatemala",
+    "telcode": "+502"
+  },
+  "GU": {
+    "name": "Guam",
+    "native": "Guam",
+    "telcode": "+1671"
+  },
+  "GW": {
+    "name": "Guinea-Bissau",
+    "native": "Guiné Bissau",
+    "telcode": "+245"
+  },
+  "GY": {
+    "name": "Guyana",
+    "native": "Guyana",
+    "telcode": "+592"
+  },
+  "HK": {
+    "name": "Hong Kong",
+    "native": "香港",
+    "telcode": "+852"
+  },
+  "HN": {
+    "name": "Honduras",
+    "native": "Honduras",
+    "telcode": "+504"
+  },
+  "HR": {
+    "name": "Croatia",
+    "native": "Hrvatska",
+    "telcode": "+385"
+  },
+  "HT": {
+    "name": "Haiti",
+    "native": "Haiti",
+    "telcode": "+509"
+  },
+  "HU": {
+    "name": "Hungary",
+    "native": "Magyarország",
+    "telcode": "+36"
+  },
+  "ID": {
+    "name": "Indonesia",
+    "native": "Indonesia",
+    "telcode": "+62"
+  },
+  "IE": {
+    "name": "Ireland",
+    "native": "Ireland",
+    "telcode": "+353"
+  },
+  "IL": {
+    "name": "Israel",
+    "native": "‫ישראל‬‎",
+    "telcode": "+972"
+  },
+  "IM": {
+    "name": "Isle of Man",
+    "native": "Isle of Man",
+    "telcode": "+44"
+  },
+  "IN": {
+    "name": "India",
+    "native": "भारत",
+    "telcode": "+91"
+  },
+  "IO": {
+    "name": "British Indian Ocean Territory",
+    "native": "British Indian Ocean Territory",
+    "telcode": "+246"
+  },
+  "IQ": {
+    "name": "Iraq",
+    "native": "‫العراق‬‎",
+    "telcode": "+964"
+  },
+  "IR": {
+    "name": "Iran",
+    "native": "‫ایران‬‎",
+    "telcode": "+98"
+  },
+  "IS": {
+    "name": "Iceland",
+    "native": "Ísland",
+    "telcode": "+354"
+  },
+  "IT": {
+    "name": "Italy",
+    "native": "Italia",
+    "telcode": "+39"
+  },
+  "JE": {
+    "name": "Jersey",
+    "native": "Jersey",
+    "telcode": "+44"
+  },
+  "JM": {
+    "name": "Jamaica",
+    "native": "Jamaica",
+    "telcode": "+1876"
+  },
+  "JO": {
+    "name": "Jordan",
+    "native": "‫الأردن‬‎",
+    "telcode": "+962"
+  },
+  "JP": {
+    "name": "Japan",
+    "native": "日本",
+    "telcode": "+81"
+  },
+  "KE": {
+    "name": "Kenya",
+    "native": "Kenya",
+    "telcode": "+254"
+  },
+  "KG": {
+    "name": "Kyrgyzstan",
+    "native": "Кыргызстан",
+    "telcode": "+996"
+  },
+  "KH": {
+    "name": "Cambodia",
+    "native": "កម្ពុជា",
+    "telcode": "+855"
+  },
+  "KI": {
+    "name": "Kiribati",
+    "native": "Kiribati",
+    "telcode": "+686"
+  },
+  "KM": {
+    "name": "Comoros",
+    "native": "‫جزر القمر‬‎",
+    "telcode": "+269"
+  },
+  "KN": {
+    "name": "Saint Kitts and Nevis",
+    "native": "Saint Kitts and Nevis",
+    "telcode": "+1869"
+  },
+  "KP": {
+    "name": "North Korea",
+    "native": "조선 민주주의 인민 공화국",
+    "telcode": "+850"
+  },
+  "KR": {
+    "name": "South Korea",
+    "native": "대한민국",
+    "telcode": "+82"
+  },
+  "KW": {
+    "name": "Kuwait",
+    "native": "‫الكويت‬‎",
+    "telcode": "+965"
+  },
+  "KY": {
+    "name": "Cayman Islands",
+    "native": "Cayman Islands",
+    "telcode": "+1345"
+  },
+  "KZ": {
+    "name": "Kazakhstan",
+    "native": "Казахстан",
+    "telcode": "+7"
+  },
+  "LA": {
+    "name": "Laos",
+    "native": "ລາວ",
+    "telcode": "+856"
+  },
+  "LB": {
+    "name": "Lebanon",
+    "native": "‫لبنان‬‎",
+    "telcode": "+961"
+  },
+  "LC": {
+    "name": "Saint Lucia",
+    "native": "Saint Lucia",
+    "telcode": "+1758"
+  },
+  "LI": {
+    "name": "Liechtenstein",
+    "native": "Liechtenstein",
+    "telcode": "+423"
+  },
+  "LK": {
+    "name": "Sri Lanka",
+    "native": "ශ්‍රී ලංකාව",
+    "telcode": "+94"
+  },
+  "LR": {
+    "name": "Liberia",
+    "native": "Liberia",
+    "telcode": "+231"
+  },
+  "LS": {
+    "name": "Lesotho",
+    "native": "Lesotho",
+    "telcode": "+266"
+  },
+  "LT": {
+    "name": "Lithuania",
+    "native": "Lietuva",
+    "telcode": "+370"
+  },
+  "LU": {
+    "name": "Luxembourg",
+    "native": "Luxembourg",
+    "telcode": "+352"
+  },
+  "LV": {
+    "name": "Latvia",
+    "native": "Latvija",
+    "telcode": "+371"
+  },
+  "LY": {
+    "name": "Libya",
+    "native": "‫ليبيا‬‎",
+    "telcode": "+218"
+  },
+  "MA": {
+    "name": "Morocco",
+    "native": "‫المغرب‬‎",
+    "telcode": "+212"
+  },
+  "MC": {
+    "name": "Monaco",
+    "native": "Monaco",
+    "telcode": "+377"
+  },
+  "MD": {
+    "name": "Moldova",
+    "native": "Republica Moldova",
+    "telcode": "+373"
+  },
+  "ME": {
+    "name": "Montenegro",
+    "native": "Crna Gora",
+    "telcode": "+382"
+  },
+  "MF": {
+    "name": "Saint Martin",
+    "native": "Saint-Martin",
+    "telcode": "+590"
+  },
+  "MG": {
+    "name": "Madagascar",
+    "native": "Madagasikara",
+    "telcode": "+261"
+  },
+  "MH": {
+    "name": "Marshall Islands",
+    "native": "Marshall Islands",
+    "telcode": "+692"
+  },
+  "MK": {
+    "name": "Macedonia",
+    "native": "FYROM",
+    "telcode": "+389"
+  },
+  "ML": {
+    "name": "Mali",
+    "native": "Mali",
+    "telcode": "+223"
+  },
+  "MM": {
+    "name": "Myanmar",
+    "native": "Burma",
+    "telcode": "+95"
+  },
+  "MN": {
+    "name": "Mongolia",
+    "native": "Монгол",
+    "telcode": "+976"
+  },
+  "MO": {
+    "name": "Macau",
+    "native": "澳門",
+    "telcode": "+853"
+  },
+  "MP": {
+    "name": "Northern Mariana Islands",
+    "native": "Northern Mariana Islands",
+    "telcode": "+1670"
+  },
+  "MQ": {
+    "name": "Martinique",
+    "native": "Martinique",
+    "telcode": "+596"
+  },
+  "MR": {
+    "name": "Mauritania",
+    "native": "‫موريتانيا‬‎",
+    "telcode": "+222"
+  },
+  "MS": {
+    "name": "Montserrat",
+    "native": "Montserrat",
+    "telcode": "+1664"
+  },
+  "MT": {
+    "name": "Malta",
+    "native": "Malta",
+    "telcode": "+356"
+  },
+  "MU": {
+    "name": "Mauritius",
+    "native": "Moris",
+    "telcode": "+230"
+  },
+  "MV": {
+    "name": "Maldives",
+    "native": "Maldives",
+    "telcode": "+960"
+  },
+  "MW": {
+    "name": "Malawi",
+    "native": "Malawi",
+    "telcode": "+265"
+  },
+  "MX": {
+    "name": "Mexico",
+    "native": "México",
+    "telcode": "+52"
+  },
+  "MY": {
+    "name": "Malaysia",
+    "native": "Malaysia",
+    "telcode": "+60"
+  },
+  "MZ": {
+    "name": "Mozambique",
+    "native": "Moçambique",
+    "telcode": "+258"
+  },
+  "NA": {
+    "name": "Namibia",
+    "native": "Namibië",
+    "telcode": "+264"
+  },
+  "NC": {
+    "name": "New Caledonia",
+    "native": "Nouvelle-Calédonie",
+    "telcode": "+687"
+  },
+  "NE": {
+    "name": "Niger",
+    "native": "Nijar",
+    "telcode": "+227"
+  },
+  "NF": {
+    "name": "Norfolk Island",
+    "native": "Norfolk Island",
+    "telcode": "+672"
+  },
+  "NG": {
+    "name": "Nigeria",
+    "native": "Nigeria",
+    "telcode": "+234"
+  },
+  "NI": {
+    "name": "Nicaragua",
+    "native": "Nicaragua",
+    "telcode": "+505"
+  },
+  "NL": {
+    "name": "Netherlands",
+    "native": "Nederland",
+    "telcode": "+31"
+  },
+  "NO": {
+    "name": "Norway",
+    "native": "Norge",
+    "telcode": "+47"
+  },
+  "NP": {
+    "name": "Nepal",
+    "native": "नेपाल",
+    "telcode": "+977"
+  },
+  "NR": {
+    "name": "Nauru",
+    "native": "Nauru",
+    "telcode": "+674"
+  },
+  "NU": {
+    "name": "Niue",
+    "native": "Niue",
+    "telcode": "+683"
+  },
+  "NZ": {
+    "name": "New Zealand",
+    "native": "New Zealand",
+    "telcode": "+64"
+  },
+  "OM": {
+    "name": "Oman",
+    "native": "‫عُمان‬‎",
+    "telcode": "+968"
+  },
+  "PA": {
+    "name": "Panama",
+    "native": "Panamá",
+    "telcode": "+507"
+  },
+  "PE": {
+    "name": "Peru",
+    "native": "Perú",
+    "telcode": "+51"
+  },
+  "PF": {
+    "name": "French Polynesia",
+    "native": "Polynésie française",
+    "telcode": "+689"
+  },
+  "PG": {
+    "name": "Papua New Guinea",
+    "native": "Papua New Guinea",
+    "telcode": "+675"
+  },
+  "PH": {
+    "name": "Philippines",
+    "native": "Philippines",
+    "telcode": "+63"
+  },
+  "PK": {
+    "name": "Pakistan",
+    "native": "‫پاکستان‬‎",
+    "telcode": "+92"
+  },
+  "PL": {
+    "name": "Poland",
+    "native": "Polska",
+    "telcode": "+48"
+  },
+  "PM": {
+    "name": "Saint Pierre and Miquelon",
+    "native": "Saint-Pierre-et-Miquelon",
+    "telcode": "+508"
+  },
+  "PR": {
+    "name": "Puerto Rico",
+    "native": "Puerto Rico",
+    "telcode": "+1"
+  },
+  "PS": {
+    "name": "Palestine",
+    "native": "‫فلسطين‬‎",
+    "telcode": "+970"
+  },
+  "PT": {
+    "name": "Portugal",
+    "native": "Portugal",
+    "telcode": "+351"
+  },
+  "PW": {
+    "name": "Palau",
+    "native": "Palau",
+    "telcode": "+680"
+  },
+  "PY": {
+    "name": "Paraguay",
+    "native": "Paraguay",
+    "telcode": "+595"
+  },
+  "QA": {
+    "name": "Qatar",
+    "native": "‫قطر‬‎",
+    "telcode": "+974"
+  },
+  "RE": {
+    "name": "Réunion",
+    "native": "La Réunion",
+    "telcode": "+262"
+  },
+  "RO": {
+    "name": "Romania",
+    "native": "România",
+    "telcode": "+40"
+  },
+  "RS": {
+    "name": "Serbia",
+    "native": "Србија",
+    "telcode": "+381"
+  },
+  "RU": {
+    "name": "Russia",
+    "native": "Россия",
+    "telcode": "+7"
+  },
+  "RW": {
+    "name": "Rwanda",
+    "native": "Rwanda",
+    "telcode": "+250"
+  },
+  "SA": {
+    "name": "Saudi Arabia",
+    "native": "‫المملكة العربية السعودية‬‎",
+    "telcode": "+966"
+  },
+  "SB": {
+    "name": "Solomon Islands",
+    "native": "Solomon Islands",
+    "telcode": "+677"
+  },
+  "SC": {
+    "name": "Seychelles",
+    "native": "Seychelles",
+    "telcode": "+248"
+  },
+  "SD": {
+    "name": "Sudan",
+    "native": "‫السودان‬‎",
+    "telcode": "+249"
+  },
+  "SE": {
+    "name": "Sweden",
+    "native": "Sverige",
+    "telcode": "+46"
+  },
+  "SG": {
+    "name": "Singapore",
+    "native": "Singapore",
+    "telcode": "+65"
+  },
+  "SH": {
+    "name": "Saint Helena",
+    "native": "Saint Helena",
+    "telcode": "+290"
+  },
+  "SI": {
+    "name": "Slovenia",
+    "native": "Slovenija",
+    "telcode": "+386"
+  },
+  "SJ": {
+    "name": "Svalbard and Jan Mayen",
+    "native": "Svalbard and Jan Mayen",
+    "telcode": "+47"
+  },
+  "SK": {
+    "name": "Slovakia",
+    "native": "Slovensko",
+    "telcode": "+421"
+  },
+  "SL": {
+    "name": "Sierra Leone",
+    "native": "Sierra Leone",
+    "telcode": "+232"
+  },
+  "SM": {
+    "name": "San Marino",
+    "native": "San Marino",
+    "telcode": "+378"
+  },
+  "SN": {
+    "name": "Senegal",
+    "native": "Sénégal",
+    "telcode": "+221"
+  },
+  "SO": {
+    "name": "Somalia",
+    "native": "Soomaaliya",
+    "telcode": "+252"
+  },
+  "SR": {
+    "name": "Suriname",
+    "native": "Suriname",
+    "telcode": "+597"
+  },
+  "SS": {
+    "name": "South Sudan",
+    "native": "‫جنوب السودان‬‎",
+    "telcode": "+211"
+  },
+  "ST": {
+    "name": "São Tomé and Príncipe",
+    "native": "São Tomé e Príncipe",
+    "telcode": "+239"
+  },
+  "SV": {
+    "name": "El Salvador",
+    "native": "El Salvador",
+    "telcode": "+503"
+  },
+  "SX": {
+    "name": "Sint Maarten",
+    "native": "Sint Maarten",
+    "telcode": "+1721"
+  },
+  "SY": {
+    "name": "Syria",
+    "native": "‫سوريا‬‎",
+    "telcode": "+963"
+  },
+  "SZ": {
+    "name": "Swaziland",
+    "native": "Swaziland",
+    "telcode": "+268"
+  },
+  "TC": {
+    "name": "Turks and Caicos Islands",
+    "native": "Turks and Caicos Islands",
+    "telcode": "+1649"
+  },
+  "TD": {
+    "name": "Chad",
+    "native": "Tchad",
+    "telcode": "+235"
+  },
+  "TG": {
+    "name": "Togo",
+    "native": "Togo",
+    "telcode": "+228"
+  },
+  "TH": {
+    "name": "Thailand",
+    "native": "ไทย",
+    "telcode": "+66"
+  },
+  "TJ": {
+    "name": "Tajikistan",
+    "native": "Tajikistan",
+    "telcode": "+992"
+  },
+  "TK": {
+    "name": "Tokelau",
+    "native": "Tokelau",
+    "telcode": "+690"
+  },
+  "TL": {
+    "name": "Timor-Leste",
+    "native": "Timor-Leste",
+    "telcode": "+670"
+  },
+  "TM": {
+    "name": "Turkmenistan",
+    "native": "Turkmenistan",
+    "telcode": "+993"
+  },
+  "TN": {
+    "name": "Tunisia",
+    "native": "‫تونس‬‎",
+    "telcode": "+216"
+  },
+  "TO": {
+    "name": "Tonga",
+    "native": "Tonga",
+    "telcode": "+676"
+  },
+  "TR": {
+    "name": "Turkey",
+    "native": "Türkiye",
+    "telcode": "+90"
+  },
+  "TT": {
+    "name": "Trinidad and Tobago",
+    "native": "Trinidad and Tobago",
+    "telcode": "+1868"
+  },
+  "TV": {
+    "name": "Tuvalu",
+    "native": "Tuvalu",
+    "telcode": "+688"
+  },
+  "TW": {
+    "name": "Taiwan",
+    "native": "台灣",
+    "telcode": "+886"
+  },
+  "TZ": {
+    "name": "Tanzania",
+    "native": "Tanzania",
+    "telcode": "+255"
+  },
+  "UA": {
+    "name": "Ukraine",
+    "native": "Україна",
+    "telcode": "+380"
+  },
+  "UG": {
+    "name": "Uganda",
+    "native": "Uganda",
+    "telcode": "+256"
+  },
+  "US": {
+    "name": "United States",
+    "native": "United States",
+    "telcode": "+1"
+  },
+  "UY": {
+    "name": "Uruguay",
+    "native": "Uruguay",
+    "telcode": "+598"
+  },
+  "UZ": {
+    "name": "Uzbekistan",
+    "native": "Oʻzbekiston",
+    "telcode": "+998"
+  },
+  "VA": {
+    "name": "Vatican City",
+    "native": "Città del Vaticano",
+    "telcode": "+39"
+  },
+  "VC": {
+    "name": "Saint Vincent and the Grenadines",
+    "native": "Saint Vincent and the Grenadines",
+    "telcode": "+1784"
+  },
+  "VE": {
+    "name": "Venezuela",
+    "native": "Venezuela",
+    "telcode": "+58"
+  },
+  "VG": {
+    "name": "British Virgin Islands",
+    "native": "British Virgin Islands",
+    "telcode": "+1284"
+  },
+  "VI": {
+    "name": "U.S. Virgin Islands",
+    "native": "U.S. Virgin Islands",
+    "telcode": "+1340"
+  },
+  "VN": {
+    "name": "Vietnam",
+    "native": "Việt Nam",
+    "telcode": "+84"
+  },
+  "VU": {
+    "name": "Vanuatu",
+    "native": "Vanuatu",
+    "telcode": "+678"
+  },
+  "WF": {
+    "name": "Wallis and Futuna",
+    "native": "Wallis and Futuna",
+    "telcode": "+681"
+  },
+  "WS": {
+    "name": "Samoa",
+    "native": "Samoa",
+    "telcode": "+685"
+  },
+  "XK": {
+    "name": "Kosovo",
+    "native": "Kosovo",
+    "telcode": "+383"
+  },
+  "YE": {
+    "name": "Yemen",
+    "native": "‫اليمن‬‎",
+    "telcode": "+967"
+  },
+  "YT": {
+    "name": "Mayotte",
+    "native": "Mayotte",
+    "telcode": "+262"
+  },
+  "ZA": {
+    "name": "South Africa",
+    "native": "South Africa",
+    "telcode": "+27"
+  },
+  "ZM": {
+    "name": "Zambia",
+    "native": "Zambia",
+    "telcode": "+260"
+  },
+  "ZW": {
+    "name": "Zimbabwe",
+    "native": "Zimbabwe",
+    "telcode": "+263"
+  }
+}
