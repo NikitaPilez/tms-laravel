@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,8 +15,14 @@ class ProductsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        Product::factory()
-            ->count(7)
+        $products = Product::factory()
+            ->count(1)
             ->create();
+
+        $tags = Tag::all();
+
+        $products->each(function ($product) use ($tags) {
+           $product->tags()->saveMany($tags->random(rand(1, 5)));
+        });
     }
 }

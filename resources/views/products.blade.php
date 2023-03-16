@@ -147,16 +147,9 @@
                     <div class="widget widget-tags">
                         <h4 class="widget-title">Tags</h4>
                         <div class="tags">
-                            <a href="#">Design</a>
-                            <a href="#">Portfolio</a>
-                            <a href="#">Digital</a>
-                            <a href="#">Branding</a>
-                            <a href="#">HTML</a>
-                            <a href="#">Clean</a>
-                            <a href="#">Peace</a>
-                            <a href="#">Love</a>
-                            <a href="#">CSS3</a>
-                            <a href="#">jQuery</a>
+                            @foreach($tags as $tag)
+                            <a href="#">{{ $tag->title }}</a>
+                            @endforeach
                         </div>
                     </div>
                     <div class="widget widget-newsletter">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,10 +28,13 @@ class ProductController extends Controller
 
         $latestProducts = Product::query()->where('is_active', 1)->orderBy('created_at', 'DESC')->take(3)->get();
 
+        $tags = Tag::all();
+
         return view('products', [
             'products' => $products,
             'categories' => $categories,
-            'latestProducts' => $latestProducts
+            'latestProducts' => $latestProducts,
+            'tags' => $tags
         ]);
     }
 
