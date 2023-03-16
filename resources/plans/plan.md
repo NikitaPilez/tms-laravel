@@ -9,6 +9,8 @@
 [Отношения в моделях](https://laravel.su/docs/8.x/eloquent-relationships)
 [Миграции](https://laravel.su/docs/8.x/migrations)
 [Аутентификация](https://laravel.su/docs/8.x/authentication)
+[CSRF](https://laravel.su/docs/8.x/csrf)
+[Blade](https://laravel.su/docs/8.x/blade)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone

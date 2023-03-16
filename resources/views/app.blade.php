@@ -57,7 +57,7 @@
                                 <li><a href="{{ route('contacts') }}">Contacts</a></li>
                                 <li><a href="{{ route('products.index') }}">Catalog</a></li>
                                 @auth
-                                    <li><a href="{{ route('products.index') }}">My account</a></li>
+                                    <li><a href="{{ route('account.show') }}">My account</a></li>
                                     <li><a href="{{ route('auth.logout') }}">Logout</a></li>
                                 @endauth
                                 @guest
