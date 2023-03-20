@@ -45,7 +45,10 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to cart</a>
+                                <form action="{{ route('cart.add', ['product' => $product->id]) }}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn"><i class="icon-shopping-cart"></i> Add to cart</button>
+                                </form>
                             </div>
                         </div>
                     </div>

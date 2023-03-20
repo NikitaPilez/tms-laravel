@@ -56,7 +56,9 @@
                                 <li><a href="{{ route('about') }}">About us</a></li>
                                 <li><a href="{{ route('contacts') }}">Contacts</a></li>
                                 <li><a href="{{ route('products.index') }}">Catalog</a></li>
+                                <li><a href="{{ route('cart.get') }}">Cart</a></li>
                                 @auth
+                                    <li><a href="{{ route('wishlist.get') }}">Wishlist</a></li>
                                     <li><a href="{{ route('account.show') }}">My account</a></li>
                                     <li><a href="{{ route('auth.logout') }}">Logout</a></li>
                                 @endauth

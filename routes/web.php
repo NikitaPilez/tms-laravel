@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WishlistController;
@@ -28,12 +29,18 @@ Route::group(['prefix' => '/account', 'controller' => AccountController::class, 
     Route::post('/', 'updateAccount')->name('account.update');
 });
 
+Route::group(['prefix' => '/cart', 'controller' => CartController::class], function () {
+    Route::get('/', 'getCart')->name('cart.get');
+    Route::post('/{product}/add', 'add')->name('cart.add');
+    Route::post('/{product}/remove', 'remove')->name('cart.remove');
+});
+
 Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class, 'middleware' => 'auth'], function () {
     Route::get('/', 'get')->name('wishlist.get');
-    Route::get('/{product}/delete', 'delete')->name('wishlist.delete');
-    Route::get('/{product}/add', 'add')->name('wishlist.add');
+    Route::post('/{product}/delete', 'delete')->name('wishlist.delete');
+    Route::post('/{product}/add', 'add')->name('wishlist.add');
 });
-Route::get('/cart', [MainController::class, 'cart'])->name('cart');
+
 Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
 Route::get('/contacts', [MainController::class, 'contacts'])->name('contacts');
 Route::get('/about', [MainController::class, 'about'])->name('about');

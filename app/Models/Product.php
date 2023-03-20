@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -43,5 +44,10 @@ class Product extends Model
         }
 
         return (count($reviews) == 0) ? 0 : round($averageStar / count($reviews));
+    }
+
+    public function scopeLatestActive(Builder $query, ?int $take = 1)
+    {
+        $query->where('is_active', 1)->orderBy('created_at', 'DESC')->take($take);
     }
 }

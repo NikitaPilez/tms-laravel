@@ -19,9 +19,11 @@ class WishlistController extends Controller
     {
         $user = Auth::user();
 
-        $user->wishlist()->attach($product);
+        if (!$user->wishlist()->where('product_id', $product->id)->first()) {
+            $user->wishlist()->attach($product);
+        }
 
-        return redirect()->route('wishlist.get');
+        return redirect()->back();
     }
 
     public function delete(Product $product)

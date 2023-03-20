@@ -18,3 +18,5 @@
 * генерируем ключ `php artisan key:generate`
 * накатываем зависимости `composer install`
 * запускаем сервер `php artisan serve`
+
+#### Аксессоры и мутаторы в моделях

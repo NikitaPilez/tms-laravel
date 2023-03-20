@@ -20,42 +20,41 @@
         <div class="container">
             <div class="row">
                 <div class="content col-lg-9">
-                    <div class="row m-b-20">
-                        <div class="col-lg-6 p-t-10 m-b-20">
-                            <h3 class="m-b-20">A Monochromatic Spring ’15</h3>
-                            <p>Lorem ipsum dolor sit amet. Accusamus, sit, exercitationem, consequuntur, assumenda iusto eos commodi alias.</p>
+                    <form method="GET" action="{{ route('products.index') }}">
+                        <div class="row m-b-20">
+    {{--                        <div class="col-lg-6 p-t-10 m-b-20">--}}
+    {{--                            <h3 class="m-b-20">A Monochromatic Spring ’15</h3>--}}
+    {{--                            <p>Lorem ipsum dolor sit amet. Accusamus, sit, exercitationem, consequuntur, assumenda iusto eos commodi alias.</p>--}}
+    {{--                        </div>--}}
+                                <div class="col-lg-4">
+                                    <div class="order-select">
+                                        <h6>Sort by</h6>
+                                        <p>Showing 1&ndash;12 of 25 results</p>
+                                        <select name="sort" class="form-control">
+                                            <option value="new" selected>Sort by newness</option>
+                                            <option value="default">Default sorting</option>
+                                            <option value="price-asc">Sort by price: low to high</option>
+                                            <option value="price-desc">Sort by price: high to low</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <div class="order-select">
+                                        <h6>Sort by Price</h6>
+                                        <p>From 0 - 190$</p>
+                                        <select name="price" class="form-control">
+                                            <option selected="selected" value="">0$ - 50$</option>
+                                            <option value="">51$ - 90$</option>
+                                            <option value="">91$ - 120$</option>
+                                            <option value="">121$ - 200$</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
+                                    <button type="submit" class="btn m-t-30 mt-3">Submit</button>
+                                </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="order-select">
-                                <h6>Sort by</h6>
-                                <p>Showing 1&ndash;12 of 25 results</p>
-                                <form method="get">
-                                    <select class="form-control">
-                                        <option selected="selected" value="order">Default sorting</option>
-                                        <option value="popularity">Sort by popularity</option>
-                                        <option value="rating">Sort by average rating</option>
-                                        <option value="date">Sort by newness</option>
-                                        <option value="price">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="order-select">
-                                <h6>Sort by Price</h6>
-                                <p>From 0 - 190$</p>
-                                <form method="get">
-                                    <select class="form-control">
-                                        <option selected="selected" value="">0$ - 50$</option>
-                                        <option value="">51$ - 90$</option>
-                                        <option value="">91$ - 120$</option>
-                                        <option value="">121$ - 200$</option>
-                                    </select>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                     <div class="shop">
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
                             @foreach($products as $product)
@@ -68,7 +67,10 @@
                                                 <span class="product-new">NEW</span>
                                             @endif
                                             <span class="product-wishlist">
-                                                <a href="#"><i class="fa fa-heart"></i></a>
+                                                <form action="{{ route('wishlist.add', ['product' => $product->id]) }}" method="POST">
+                                                    @csrf
+                                                        <a href="#" onclick="this.parentNode.submit()"><i class="fa fa-heart"></i></a>
+                                                </form>
                                             </span>
                                         </div>
                                         <div class="product-description">
