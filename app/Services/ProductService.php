@@ -11,12 +11,12 @@ class ProductService
         $products = Product::query();
 
         $products = match ($params['sort'] ?? null) {
-            'rating' => $products->withAvg('reviews', 'star_count')->groupBy('id')->orderBy('reviews_avg_star_count', 'DESC'),
+            'rating' => $products->withAvg('reviews', 'star_count')->groupBy('id')->orderByDesc('reviews_avg_star_count'),
             'price-asc' => $products->orderBy('price'),
-            'price-desc' => $products->orderBy('price', 'DESC'),
-            default => $products->orderBy('created_at', 'DESC')
+            'price-desc' => $products->orderByDesc('price'),
+            default => $products->orderByDesc('created_at')
         };
 
-        return $products->where('is_active', 1)->get();
+        return $products->where('is_active', 1)->paginate(12);
     }
 }

@@ -29,13 +29,12 @@ class ProductController extends Controller
 
         $latestProducts = Product::query()->latestActive(3)->get();
 
-        $tags = Tag::all();
-
         return view('products', [
             'products' => $products,
             'categories' => $categories,
             'latestProducts' => $latestProducts,
-            'tags' => $tags
+            'tags' => Tag::all(),
+            'params' => $request->all()
         ]);
     }
 

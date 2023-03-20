@@ -11,6 +11,7 @@
 [Аутентификация](https://laravel.su/docs/8.x/authentication)
 [CSRF](https://laravel.su/docs/8.x/csrf)
 [Blade](https://laravel.su/docs/8.x/blade)
+[Мутаторы и аксессоры](https://laravel.su/docs/8.x/eloquent-mutators)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone
@@ -19,4 +20,5 @@
 * накатываем зависимости `composer install`
 * запускаем сервер `php artisan serve`
 
-#### Аксессоры и мутаторы в моделях
+### Вставка и обновление моделей, fillable https://laravel.su/docs/8.x/eloquent#inserting-and-updating-models
+### Scope https://laravel.su/docs/8.x/eloquent#query-scopes

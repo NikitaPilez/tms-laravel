@@ -22,37 +22,33 @@
                 <div class="content col-lg-9">
                     <form method="GET" action="{{ route('products.index') }}">
                         <div class="row m-b-20">
-    {{--                        <div class="col-lg-6 p-t-10 m-b-20">--}}
-    {{--                            <h3 class="m-b-20">A Monochromatic Spring ’15</h3>--}}
-    {{--                            <p>Lorem ipsum dolor sit amet. Accusamus, sit, exercitationem, consequuntur, assumenda iusto eos commodi alias.</p>--}}
-    {{--                        </div>--}}
-                                <div class="col-lg-4">
-                                    <div class="order-select">
-                                        <h6>Sort by</h6>
-                                        <p>Showing 1&ndash;12 of 25 results</p>
-                                        <select name="sort" class="form-control">
-                                            <option value="new" selected>Sort by newness</option>
-                                            <option value="default">Default sorting</option>
-                                            <option value="price-asc">Sort by price: low to high</option>
-                                            <option value="price-desc">Sort by price: high to low</option>
-                                        </select>
-                                    </div>
+                            <div class="col-lg-4">
+                                <div class="order-select">
+                                    <h6>Sort by</h6>
+                                    <p>Showing 1&ndash;12 of 25 results</p>
+                                    <select name="sort" class="form-control">
+                                        <option value="new" @if($params['sort'] == 'new' || !$params['sort']) selected @endif>Sort by newness</option>
+                                        <option value="rating" @if($params['sort'] == 'rating') selected @endif>Rating</option>
+                                        <option value="price-asc" @if($params['sort'] == 'price-asc') selected @endif>Sort by price: low to high</option>
+                                        <option value="price-desc"@if($params['sort'] == 'price-desc') selected @endif>Sort by price: high to low</option>
+                                    </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <div class="order-select">
-                                        <h6>Sort by Price</h6>
-                                        <p>From 0 - 190$</p>
-                                        <select name="price" class="form-control">
-                                            <option selected="selected" value="">0$ - 50$</option>
-                                            <option value="">51$ - 90$</option>
-                                            <option value="">91$ - 120$</option>
-                                            <option value="">121$ - 200$</option>
-                                        </select>
-                                    </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="order-select">
+                                    <h6>Sort by Price</h6>
+                                    <p>From 0 - 190$</p>
+                                    <select class="form-control">
+                                        <option selected="selected" value="">0$ - 50$</option>
+                                        <option value="">51$ - 90$</option>
+                                        <option value="">91$ - 120$</option>
+                                        <option value="">121$ - 200$</option>
+                                    </select>
                                 </div>
-                                <div class="col-lg-4">
-                                    <button type="submit" class="btn m-t-30 mt-3">Submit</button>
-                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <button type="submit" class="btn m-t-30 mt-3">Submit</button>
+                            </div>
                         </div>
                     </form>
                     <div class="shop">
@@ -101,15 +97,16 @@
 
                         </div>
                         <hr>
-                        <ul class="pagination">
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">4</a></li>
-                            <li class="page-item"><a class="page-link" href="#">5</a></li>
-                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>
-                        </ul>
+{{--                        <ul class="pagination">--}}
+{{--                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-left"></i></a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">1</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">2</a></li>--}}
+{{--                            <li class="page-item active"><a class="page-link" href="#">3</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">4</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#">5</a></li>--}}
+{{--                            <li class="page-item"><a class="page-link" href="#"><i class="fa fa-angle-right"></i></a></li>--}}
+{{--                        </ul>--}}
+                        {{ $products->links() }}
                     </div>
                 </div>
                 <div class="sidebar sticky-sidebar col-lg-3">
@@ -168,6 +165,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
     <section class="background-grey p-t-40 p-b-0">
         <div class="container">
