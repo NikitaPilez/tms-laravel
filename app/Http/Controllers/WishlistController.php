@@ -32,6 +32,6 @@ class WishlistController extends Controller
 
         $user->wishlist()->detach($product);
 
-        return redirect()->route('wishlist.get');
+        return redirect()->back();
     }
 }

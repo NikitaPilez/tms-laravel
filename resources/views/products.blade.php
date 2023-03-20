@@ -27,10 +27,10 @@
                                     <h6>Sort by</h6>
                                     <p>Showing 1&ndash;12 of 25 results</p>
                                     <select name="sort" class="form-control">
-                                        <option value="new" @if($params['sort'] == 'new' || !$params['sort']) selected @endif>Sort by newness</option>
-                                        <option value="rating" @if($params['sort'] == 'rating') selected @endif>Rating</option>
-                                        <option value="price-asc" @if($params['sort'] == 'price-asc') selected @endif>Sort by price: low to high</option>
-                                        <option value="price-desc"@if($params['sort'] == 'price-desc') selected @endif>Sort by price: high to low</option>
+                                        <option value="new">Sort by newness</option>
+                                        <option value="rating">Rating</option>
+                                        <option value="price-asc">Sort by price: low to high</option>
+                                        <option value="price-desc">Sort by price: high to low</option>
                                     </select>
                                 </div>
                             </div>
