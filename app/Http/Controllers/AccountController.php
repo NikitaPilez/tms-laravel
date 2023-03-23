@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\Country;
+use App\Http\Requests\AccountRequest;
 use App\Services\AccountService;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
@@ -21,9 +21,9 @@ class AccountController extends Controller
         ]);
     }
 
-    public function updateAccount(Request $request, AccountService $accountService)
+    public function updateAccount(AccountRequest $request, AccountService $accountService)
     {
-        $accountService->updateAccount($request->all());
+        $accountService->updateAccount($request->validated());
         return redirect()->route('account.show');
     }
 }

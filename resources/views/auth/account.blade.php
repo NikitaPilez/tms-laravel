@@ -20,9 +20,6 @@
                                     <li class="nav-item">
                                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabAddress" role="tab" aria-controls="contact" aria-selected="false">Address Information</a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tabPassword" role="tab" aria-controls="profile" aria-selected="false">Password</a>
-                                    </li>
                                 </ul>
                                 <div class="tab-content" id="myTabContent">
                                     <div class="tab-pane fade show active" id="tabProfile" role="tabpanel" aria-labelledby="tab-profile">
@@ -109,32 +106,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade" id="tabPassword" role="tabpanel" aria-labelledby="tab-password">
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Old password</label>
-                                                    <input class="form-control" type="password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">New password</label>
-                                                    <input class="form-control" type="password">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label class="form-control-label">Confirm password</label>
-                                                    <input class="form-control" type="password">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
+                            @foreach($errors->all() as $key => $error)
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{$error}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                            @endforeach
                             <div class="mt-4">
                                 <button type="submit" class="btn btn-sm">Save changes</button>
                             </div>
