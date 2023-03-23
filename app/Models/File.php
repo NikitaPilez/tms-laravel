@@ -11,7 +11,9 @@ class File extends Model
 
     protected $fillable = [
         'name',
-        'type'
+        'type',
+        'mimetype',
+        'size'
     ];
 
     public function feedback()

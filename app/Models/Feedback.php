@@ -9,6 +9,14 @@ class Feedback extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'email',
+        'subject',
+        'message',
+        'file_id'
+    ];
+
     protected $table = 'feedbacks';
 
     public function file()

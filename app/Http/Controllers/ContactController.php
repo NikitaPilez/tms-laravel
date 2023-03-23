@@ -22,15 +22,14 @@ class ContactController extends Controller
         if ($request->has('file')) {
             $uploadedFile = $request->file('file');
 
-            $createdFile = Storage::disk('local')->put(
-                time() . '_' . $uploadedFile->getClientOriginalName(),
-                $uploadedFile
-            );
-
             $file = File::create([
                 'name' => $uploadedFile->getClientOriginalName(),
-                'type' => $uploadedFile->getClientOriginalExtension()
+                'type' => $uploadedFile->getClientOriginalExtension(),
+                'mimetype' => $uploadedFile->getMimeType(),
+                'size' => $uploadedFile->getSize()
             ]);
+
+            $uploadedFile->move(storage_path() . '/app/public', $uploadedFile->getClientOriginalName());
         }
 
         $feedback = Feedback::create([
