@@ -22,28 +22,45 @@
                 <h3 class="text-uppercase">Get In Touch</h3>
                 <p>The most happiest time of the day!. Suspendisse condimentum porttitor cursus. Duis nec nulla turpis. Nulla lacinia laoreet odio, non lacinia nisl malesuada vel. Aenean malesuada fermentum bibendum.</p>
                 <div class="m-t-30">
-                    <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form" method="post">
+                    <form enctype="multipart/form-data" action="{{ route('contacts.feedback') }}" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="form-group col-md-6">
                                 <label for="name">Name</label>
-                                <input type="text" aria-required="true" name="widget-contact-form-name" required class="form-control required name" placeholder="Enter your Name">
+                                <input value="{{ old('name') }}" type="text" aria-required="true" name="name" class="form-control name" placeholder="Enter your Name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="email">Email</label>
-                                <input type="email" aria-required="true" name="widget-contact-form-email" required class="form-control required email" placeholder="Enter your Email">
+                                <input type="email" value="{{ old('email') }}" aria-required="true" name="email" class="form-control email" placeholder="Enter your Email">
                             </div>
                         </div>
                         <div class="row">
                             <div class="form-group col-md-12">
                                 <label for="subject">Your Subject</label>
-                                <input type="text" name="widget-contact-form-subject" required class="form-control required" placeholder="Subject...">
+                                <input type="text" value="{{ old('subject') }}" name="subject" class="form-control" placeholder="Subject...">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea type="text" name="widget-contact-form-message" required rows="5" class="form-control required" placeholder="Enter your Message"></textarea>
+                            <textarea type="text" name="message" rows="5" class="form-control" placeholder="Enter your Message"></textarea>
                         </div>
-                        <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
+                        <div class="form-group">
+                            <label for="file">File</label>
+                            <input type="file" name="file" class="form-control-file" id="file">
+                        </div>
+                        @if (!$errors->any())
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                Success
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            </div>
+                        @endif
+                        @foreach($errors->all() as $key => $error)
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                {{$error}}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                            </div>
+                        @endforeach
+                        <button class="btn" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                     </form>
                 </div>
             </div>

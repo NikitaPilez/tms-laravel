@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\WishlistController;
@@ -42,6 +43,7 @@ Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class
 });
 
 Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
-Route::get('/contacts', [MainController::class, 'contacts'])->name('contacts');
+Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
+Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/sales', [MainController::class, 'sales'])->name('sales');

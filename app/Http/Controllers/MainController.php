@@ -25,11 +25,6 @@ class MainController extends Controller
         return view('checkout');
     }
 
-    public function contacts()
-    {
-        return view('contacts');
-    }
-
     public function sales()
     {
 

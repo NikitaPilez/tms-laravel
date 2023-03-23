@@ -11,6 +11,7 @@
 [Аутентификация](https://laravel.su/docs/8.x/authentication)
 [CSRF](https://laravel.su/docs/8.x/csrf)
 [Blade](https://laravel.su/docs/8.x/blade)
+[Валидация запросов](https://laravel.su/docs/8.x/validation)
 [Мутаторы и аксессоры](https://laravel.su/docs/8.x/eloquent-mutators)
 
 ## План по установке приложения:
