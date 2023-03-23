@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ContactRequest;
 use App\Models\Feedback;
 use App\Models\File;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use App\Services\FileService;
 
 class ContactController extends Controller
 {
@@ -15,24 +14,15 @@ class ContactController extends Controller
         return view('contacts');
     }
 
-    public function sendFeedback(ContactRequest $request)
+    public function sendFeedback(ContactRequest $request, FileService $fileService)
     {
         $validated = $request->validated();
 
         if ($request->has('file')) {
-            $uploadedFile = $request->file('file');
-
-            $file = File::create([
-                'name' => $uploadedFile->getClientOriginalName(),
-                'type' => $uploadedFile->getClientOriginalExtension(),
-                'mimetype' => $uploadedFile->getMimeType(),
-                'size' => $uploadedFile->getSize()
-            ]);
-
-            $uploadedFile->move(storage_path() . '/app/public', $uploadedFile->getClientOriginalName());
+            $file = $fileService->createContactFile($request->file('file'));
         }
 
-        $feedback = Feedback::create([
+        Feedback::query()->create([
             'name' => $validated['name'] ?? null,
             'email' => $validated['email'] ?? null,
             'subject' => $validated['subject'] ?? null,

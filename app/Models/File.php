@@ -13,7 +13,8 @@ class File extends Model
         'name',
         'type',
         'mimetype',
-        'size'
+        'size',
+        'path'
     ];
 
     public function feedback()

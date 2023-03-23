@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::table('files', function (Blueprint $table) {
             $table->string('mimetype');
             $table->float('size');
+            $table->string('path');
         });
     }
 
