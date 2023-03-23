@@ -22,6 +22,14 @@
                                 </label>
                             </div>
                         </div>
+                        <div class="col-lg-12 form-group">
+                            @foreach($errors->all() as $key => $error)
+                                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                    {{$error}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                            @endforeach
+                        </div>
                         <div class="text-left form-group">
                             <button type="submit" class="btn">Login</button>
                         </div>

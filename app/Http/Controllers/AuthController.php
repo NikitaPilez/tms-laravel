@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,14 +21,16 @@ class AuthController extends Controller
         return view('auth.register');
     }
 
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
+        $validated = $request->validated();
+
         $credentials = [
-            'email' => $request->input('email'),
-            'password' => $request->input('password')
+            'email' => $validated['email'],
+            'password' => $validated['password']
         ];
 
-        $isRemember = $request->input('remember') == 'on';
+        $isRemember = $validated['remember'] == 'on';
 
         if (Auth::attempt($credentials, $isRemember)) {
             $request->session()->regenerate();
@@ -39,16 +43,14 @@ class AuthController extends Controller
         ]);
     }
 
-    public function register(Request $request)
+    public function register(RegisterRequest $request)
     {
-        $name = $request->input('name');
-        $password = $request->input('password');
-        $email = $request->input('email');
+        $validated = $request->validated();
 
         $user = User::create([
-            'name' => $name,
-            'email' => $email,
-            'password' => Hash::make($password)
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password'])
         ]);
 
         Auth::login($user);
