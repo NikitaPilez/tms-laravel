@@ -20,37 +20,6 @@
         <div class="container">
             <div class="row">
                 <div class="content col-lg-9">
-                    <form method="GET" action="{{ route('products.index') }}">
-                        <div class="row m-b-20">
-                            <div class="col-lg-4">
-                                <div class="order-select">
-                                    <h6>Sort by</h6>
-                                    <p>Showing 1&ndash;12 of 25 results</p>
-                                    <select name="sort" class="form-control">
-                                        <option value="new">Sort by newness</option>
-                                        <option value="rating">Rating</option>
-                                        <option value="price-asc">Sort by price: low to high</option>
-                                        <option value="price-desc">Sort by price: high to low</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="order-select">
-                                    <h6>Sort by Price</h6>
-                                    <p>From 0 - 190$</p>
-                                    <select class="form-control">
-                                        <option selected="selected" value="">0$ - 50$</option>
-                                        <option value="">51$ - 90$</option>
-                                        <option value="">91$ - 120$</option>
-                                        <option value="">121$ - 200$</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <button type="submit" class="btn m-t-30 mt-3">Submit</button>
-                            </div>
-                        </div>
-                    </form>
                     <div class="shop">
                         <div class="grid-layout grid-3-columns" data-item="grid-item">
                             @foreach($products as $product)
@@ -111,13 +80,32 @@
                 </div>
                 <div class="sidebar sticky-sidebar col-lg-3">
                     <div class="widget widget-archive">
-                        <h4 class="widget-title">Product categories</h4>
-                        <ul class="list list-lines">
-                            @foreach($categories as $category)
-                                <li><a href="{{ route('products.category', ['category' => $category->id]) }}">{{ $category->name }}</a> <span class="count">( {{ $category->count }} )</span>
-                                </li>
-                            @endforeach
-                        </ul>
+                        <h2>Filter</h2>
+                        <form method="GET" action="{{ route('products.index') }}">
+                            <div class="order-select">
+                                <h6>Sort by</h6>
+                                <p>Showing 1&ndash;12 of 25 results</p>
+                                <select name="sort" class="form-control">
+                                    <option value="new">Sort by newness</option>
+                                    <option value="rating">Rating</option>
+                                    <option value="price-asc">Sort by price: low to high</option>
+                                    <option value="price-desc">Sort by price: high to low</option>
+                                </select>
+                            </div>
+                            <div class="order-select">
+                                <h6>Price min</h6>
+                                <div class="form-group">
+                                    <input type="number" placeholder="0" class="form-control" name="price-min">
+                                </div>
+                            </div>
+                            <div class="order-select">
+                                <h6>Price max</h6>
+                                <div class="form-group">
+                                    <input type="number" placeholder="10000" class="form-control" name="price-max">
+                                </div>
+                            </div>
+                            <button type="submit" class="btn mt-1">Submit</button>
+                        </form>
                     </div>
                     <div class="widget widget-shop">
                         <h4 class="widget-title">Latest Products</h4>

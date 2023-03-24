@@ -17,6 +17,14 @@ class ProductService
             default => $products->orderByDesc('created_at')
         };
 
+        if (isset($params['price-min'])) {
+            $products->where('price', '>', $params['price-min']);
+        }
+
+        if (isset($params['price-max'])) {
+            $products->where('price', '<', $params['price-max']);
+        }
+
         return $products->where('is_active', 1)->paginate(12);
     }
 }
