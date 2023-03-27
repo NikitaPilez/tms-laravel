@@ -25,10 +25,12 @@ class AuthController extends Controller
     {
         $validated = $request->validated();
 
+        $isRemember = isset($validated['remember']) && $validated['remember'] == 'on';
+
         if (Auth::attempt([
             'email' => $validated['email'],
             'password' => $validated['password']
-        ], $validated['remember'] == 'on')) {
+        ], $isRemember)) {
             $request->session()->regenerate();
 
             return redirect()->route('main');

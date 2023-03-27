@@ -42,6 +42,20 @@ Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class
     Route::post('/{product}/add', 'add')->name('wishlist.add');
 });
 
+Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
+    Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
+        Route::get('/', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('index');
+
+        Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create.view');
+        Route::post('/create', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('create');
+
+        Route::get('/update', [\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('update.view');
+        Route::post('/update', [\App\Http\Controllers\Admin\ProductController::class, 'update'])->name('update');
+
+        Route::get('/delete/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('delete');
+    });
+});
+
 Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
 Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');

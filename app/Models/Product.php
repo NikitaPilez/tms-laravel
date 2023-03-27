@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -9,16 +10,27 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Facades\Auth;
 
 class Product extends Model
 {
     use HasFactory;
 
-    protected function title(): Attribute
+    protected $fillable = [
+        'title',
+        'short_description',
+        'price',
+        'sale_price',
+        'description',
+        'category_id'
+    ];
+
+    protected function createdAt(): Attribute
     {
+        $timezone = Auth::user()->information?->timezone ?? config('app.timezone');
+
         return Attribute::make(
-            get: fn (string $value) => ucfirst($value),
-            set: fn (string $value) => strtolower($value)
+            get: fn (string $value) => Carbon::parse($value)->timezone($timezone)
         );
     }
 

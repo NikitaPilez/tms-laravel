@@ -21,17 +21,10 @@ class ProductController extends Controller
     {
         $products = $productService->getProducts($request->all());
 
-        $categories = DB::table('categories')
-            ->selectRaw('categories.id, count(categories.id) as count, categories.name as name')
-            ->leftJoin('products', 'categories.id', '=', 'products.category_id')
-            ->groupBy('categories.id')
-            ->get();
-
         $latestProducts = Product::query()->latestActive(3)->get();
 
         return view('products', [
             'products' => $products,
-            'categories' => $categories,
             'latestProducts' => $latestProducts,
             'tags' => Tag::all(),
             'params' => $request->all()
