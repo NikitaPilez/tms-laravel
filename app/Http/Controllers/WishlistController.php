@@ -23,6 +23,8 @@ class WishlistController extends Controller
             $user->wishlist()->attach($product);
         }
 
+        session()->flash('success', 'Added!');
+
         return redirect()->back();
     }
 

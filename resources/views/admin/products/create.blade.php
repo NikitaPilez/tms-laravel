@@ -17,8 +17,8 @@
                                         <input type="text" class="form-control" value="{{ old('title') }}" name="title" placeholder="Title">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label for="email">Short description</label>
-                                        <input type="email" class="form-control" value="{{ old('short_description') }}" name="short_description" placeholder="Enter your short description">
+                                        <label for="short_description">Short description</label>
+                                        <input type="text" class="form-control" value="{{ old('short_description') }}" name="short_description" placeholder="Enter your short description">
                                     </div>
                                 </div>
                                 <div class="form-row">

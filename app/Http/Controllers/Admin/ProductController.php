@@ -72,6 +72,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        session()->flash('success', 'Product has been successfully deleted');
 
         return back();
     }

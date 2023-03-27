@@ -61,6 +61,19 @@
                                     <li><a href="{{ route('wishlist.get') }}">Wishlist</a></li>
                                     <li><a href="{{ route('account.show') }}">My account</a></li>
                                     <li><a href="{{ route('auth.logout') }}">Logout</a></li>
+                                    @if(Auth::user()->is_admin)
+                                        <li class="dropdown mega-menu-item"><span class="dropdown-arrow"></span><a href="#">Admin</a>
+                                            <ul class="dropdown-menu menu-last" style="">
+                                                <li class="mega-menu-content">
+                                                    <div class="row">
+                                                        <ul>
+                                                            <li class="mega-menu-title" href="{{ route('admin.products.index') }}">Products</li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    @endif
                                 @endauth
                                 @guest
                                     <li><a href="{{ route('auth.login') }}">Login</a></li>
