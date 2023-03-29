@@ -4,13 +4,14 @@ namespace App\Services;
 
 use App\Models\Product;
 use App\Models\ProductImage;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\UploadedFile;
 
 class ProductService
 {
     public function getProducts(array $params)
     {
-        $products = Product::query();
+        $products = Product::query()->with(['reviews', 'category']);
 
         $products = match ($params['sort'] ?? null) {
             'rating' => $products->withAvg('reviews', 'star_count')->groupBy('id')->orderByDesc('reviews_avg_star_count'),
@@ -44,5 +45,29 @@ class ProductService
 //        Storage::put('/products', $uploadedFile);
 
         return $productImage;
+    }
+
+    public function downloadCsv(Collection $products)
+    {
+        header('Content-Type: text/csv');
+        header('Content-Disposition: attachment; filename=products.csv');
+
+        $f = fopen('php://output', 'w');
+        fputcsv($f, ['Название', 'Короткое описание', 'Цена', 'Цена со скидкой', 'Описание', 'Категория', 'Статус', 'Дата создания'], ';');
+
+        foreach ($products as $product) {
+            $data = [
+                $product->title,
+                $product->short_description,
+                $product->price,
+                $product->sale_price,
+                $product->description,
+                $product->category?->name,
+                $product->is_active == 1 ? 'Активен' : 'Не активен',
+                $product->created_at
+            ];
+            fputcsv($f, $data, ';');
+        }
+        exit;
     }
 }

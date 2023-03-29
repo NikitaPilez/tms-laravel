@@ -19,7 +19,7 @@
             <div class="row mb-3">
                 <div class="col-lg-6">
                     <a href="{{ route('admin.products.create') }}" class="btn btn-light"><i class="icon-plus"></i>Add Record</a>
-                    <a class="btn btn-light"><i class="icon-plus"></i>Export to csv</a>
+                    <a href="{{ route('admin.products.download.csv') }}" class="btn btn-light"><i class="icon-plus"></i>Export to csv</a>
                 </div>
             </div>
             <div class="row">
@@ -70,6 +70,7 @@
                         </tr>
                         </tfoot>
                     </table>
+                    {!! $products->appends(Request::all())->links() !!}
                 </div>
             </div>
         </div>

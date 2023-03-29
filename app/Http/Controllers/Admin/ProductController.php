@@ -12,12 +12,20 @@ use Illuminate\Http\UploadedFile;
 
 class ProductController extends Controller
 {
+    private ProductService $productService;
+
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+        parent::__construct();
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $products = Product::query()->orderByDesc('created_at')->paginate(15);
+        $products = Product::query()->with(['category'])->orderByDesc('created_at')->paginate(15);
 
         return view('admin.products.index', [
             'products' => $products
@@ -37,7 +45,7 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateProductRequest $request, ProductService $fileService)
+    public function store(CreateProductRequest $request)
     {
         $validated = $request->validated();
         $product = Product::query()->create($validated);
@@ -45,7 +53,7 @@ class ProductController extends Controller
         if ($request->has('files')) {
             /** @var UploadedFile $file */
             foreach ($request->file('files') as $file) {
-                $productImage = $fileService->createProductImage($file);
+                $productImage = $this->productService->createProductImage($file);
                 $product->images()->save($productImage);
             }
         }
@@ -96,5 +104,10 @@ class ProductController extends Controller
         session()->flash('success', 'Product has been successfully deleted');
 
         return back();
+    }
+
+    public function downloadCsv()
+    {
+        $this->productService->downloadCsv(Product::all());
     }
 }

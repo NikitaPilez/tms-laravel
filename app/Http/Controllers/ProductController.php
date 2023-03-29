@@ -30,9 +30,4 @@ class ProductController extends Controller
             'params' => $request->all()
         ]);
     }
-
-    public function category()
-    {
-
-    }
 }

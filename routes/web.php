@@ -13,7 +13,6 @@ Route::get('/', [MainController::class, 'main'])->name('main');
 
 Route::group(['prefix' => '/products', 'controller' => ProductController::class], function () {
     Route::get('/', 'products')->name('products.index');
-    Route::get('/categories/{category}', 'category')->name('products.category');
     Route::get('/{product}', 'product')->name('products.show');
 });
 
@@ -45,6 +44,7 @@ Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class
 Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
         Route::get('/', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('index');
+        Route::get('/download-csv', [\App\Http\Controllers\Admin\ProductController::class, 'downloadCsv'])->name('download.csv');
 
         Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create.view');
         Route::post('/create', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('create');
