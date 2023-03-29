@@ -22,7 +22,8 @@ class Product extends Model
         'price',
         'sale_price',
         'description',
-        'category_id'
+        'category_id',
+        'is_active'
     ];
 
     protected function createdAt(): Attribute

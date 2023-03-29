@@ -9,7 +9,7 @@
                             <span class="h4">Create product</span>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('admin.products.create') }}" class="form-validate" method="POST">
+                            <form enctype="multipart/form-data" action="{{ route('admin.products.create') }}" class="form-validate" method="POST">
                                 @csrf
                                 <div class="form-row">
                                     <div class="form-group col-md-6">
@@ -35,20 +35,20 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="category">Category</label>
-                                            <select name="category" class="form-control">
+                                            <select name="category_id" class="form-control">
                                                 <option value="">None</option>
                                                 @foreach($categories as $category)
-                                                    <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                    <option value="{{ $category->id }}" @if(old('category') == $category->id) selected @endif>{{ $category->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="status">Status</label>
-                                            <select name="status" class="form-control">
-                                                <option value="1" selected>Active</option>
-                                                <option value="0">Not active</option>
+                                            <label for="is_active">Status</label>
+                                            <select name="is_active" class="form-control">
+                                                <option value="1" @if(old('is_active') == 1) selected @endif>Active</option>
+                                                <option value="0" @if(old('is_active') == 0) selected @endif>Not active</option>
                                             </select>
                                         </div>
                                     </div>
@@ -57,24 +57,28 @@
                                     <div class="col-md-6">
                                         <label>Description</label>
                                         <div class="form-group">
-                                            <textarea class="form-control" name="description" rows="10"></textarea>
+                                            <textarea class="form-control" name="description" rows="10">{{ old('description') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="file">File</label>
-                                            <input type="file" name="file" class="form-control-file" id="file">
+                                            <input type="file" name="files[]" multiple class="form-control-file" id="file">
                                         </div>
                                     </div>
                                 </div>
-                                @foreach($errors->all() as $key => $error)
+                                @if($errors->any())
                                     <div class="form-row">
-                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                            {{$error}}
-                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        <div class="col-md-6">
+                                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                @foreach($errors->all() as $key => $error)
+                                                    {{$error}} <br>
+                                                @endforeach
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                            </div>
                                         </div>
                                     </div>
-                                @endforeach
+                                @endif
                                 <button type="submit" class="btn m-t-30 mt-3">Submit</button>
                             </form>
                         </div>

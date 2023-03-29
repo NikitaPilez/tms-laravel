@@ -3,6 +3,8 @@
 namespace App\Services;
 
 use App\Models\Product;
+use App\Models\ProductImage;
+use Illuminate\Http\UploadedFile;
 
 class ProductService
 {
@@ -26,5 +28,21 @@ class ProductService
         }
 
         return $products->where('is_active', 1)->paginate(12);
+    }
+
+    public function createProductImage(UploadedFile $uploadedFile)
+    {
+        $productImage = ProductImage::query()->create([
+            'name' => $uploadedFile->getClientOriginalName(),
+            'type' => $uploadedFile->getClientOriginalExtension(),
+            'mimetype' => $uploadedFile->getMimeType(),
+            'size' => $uploadedFile->getSize(),
+            'path' => 'img/products/' . $uploadedFile->getClientOriginalName()
+        ]);
+
+        $uploadedFile->move(public_path() .  '/img/', $uploadedFile->getClientOriginalName());
+//        Storage::put('/products', $uploadedFile);
+
+        return $productImage;
     }
 }

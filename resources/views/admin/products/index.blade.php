@@ -51,7 +51,7 @@
                                 @else
                                     <td><span class="badge badge-pill badge-danger">Not active</span></td>
                                 @endif
-                                <td> <a class="ml-2" href="#" data-toggle="tooltip" data-original-title="Edit"><i class="icon-edit"></i></a>
+                                <td> <a class="ml-2" href="{{ route('admin.products.update.view', ['product' => $product->id]) }}" data-toggle="tooltip" data-original-title="Edit"><i class="icon-edit"></i></a>
                                     <a class="ml-2" href="{{ route('admin.products.delete', ['product' => $product->id]) }}" data-toggle="tooltip" data-original-title="Delete"><i class="icon-trash-2"></i></a>
                                 </td>
                             </tr>

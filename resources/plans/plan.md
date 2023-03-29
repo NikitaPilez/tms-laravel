@@ -13,6 +13,7 @@
 [Blade](https://laravel.su/docs/8.x/blade)
 [Валидация запросов](https://laravel.su/docs/8.x/validation)
 [Мутаторы и аксессоры](https://laravel.su/docs/8.x/eloquent-mutators)
+[Посредники](https://laravel.su/docs/8.x/middleware)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone
@@ -20,6 +21,3 @@
 * генерируем ключ `php artisan key:generate`
 * накатываем зависимости `composer install`
 * запускаем сервер `php artisan serve`
-
-### Вставка и обновление моделей, fillable https://laravel.su/docs/8.x/eloquent#inserting-and-updating-models
-### Scope https://laravel.su/docs/8.x/eloquent#query-scopes

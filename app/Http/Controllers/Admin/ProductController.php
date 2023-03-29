@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateProductRequest;
+use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Services\ProductService;
+use Illuminate\Http\UploadedFile;
 
 class ProductController extends Controller
 {
@@ -35,10 +37,21 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(CreateProductRequest $request)
+    public function store(CreateProductRequest $request, ProductService $fileService)
     {
-        Product::query()->create($request->validated());
+        $validated = $request->validated();
+        $product = Product::query()->create($validated);
+
+        if ($request->has('files')) {
+            /** @var UploadedFile $file */
+            foreach ($request->file('files') as $file) {
+                $productImage = $fileService->createProductImage($file);
+                $product->images()->save($productImage);
+            }
+        }
+
         session()->flash('success', 'Product has been successfully created');
+
         return redirect()->route('admin.products.index');
     }
 
@@ -53,17 +66,24 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Product $product)
     {
-        //
+        return view('admin.products.update', [
+            'product' => $product,
+            'categories' => Category::query()->where('is_active', 1)->get()
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->validated());
+
+        session()->flash('success', 'Product has been successfully updated');
+
+        return redirect()->back();
     }
 
     /**
@@ -72,6 +92,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+
         session()->flash('success', 'Product has been successfully deleted');
 
         return back();

@@ -49,8 +49,8 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], 
         Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create.view');
         Route::post('/create', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('create');
 
-        Route::get('/update', [\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('update.view');
-        Route::post('/update', [\App\Http\Controllers\Admin\ProductController::class, 'update'])->name('update');
+        Route::get('/update/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('update.view');
+        Route::post('/update/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'update'])->name('update');
 
         Route::get('/delete/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('delete');
     });
