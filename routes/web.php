@@ -45,6 +45,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], 
     Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
         Route::get('/', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('index');
         Route::get('/download-csv', [\App\Http\Controllers\Admin\ProductController::class, 'downloadCsv'])->name('download.csv');
+        Route::get('/download-excel', [\App\Http\Controllers\Admin\ProductController::class, 'downloadExcel'])->name('download.excel');
 
         Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create.view');
         Route::post('/create', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('create');

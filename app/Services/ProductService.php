@@ -6,6 +6,9 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\UploadedFile;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 class ProductService
 {
@@ -53,7 +56,7 @@ class ProductService
         header('Content-Disposition: attachment; filename=products.csv');
 
         $f = fopen('php://output', 'w');
-        fputcsv($f, ['Название', 'Короткое описание', 'Цена', 'Цена со скидкой', 'Описание', 'Категория', 'Статус', 'Дата создания'], ';');
+        fputcsv($f, ['Title', 'Short description', 'Price', 'Sale price', 'Description', 'Category name', 'Status', 'Created at'], ';');
 
         foreach ($products as $product) {
             $data = [
@@ -69,5 +72,37 @@ class ProductService
             fputcsv($f, $data, ';');
         }
         exit;
+    }
+
+    public function downloadExcel(Collection $products)
+    {
+        $spreadsheet = new Spreadsheet();
+        $activeWorksheet = $spreadsheet->getActiveSheet();
+        $this->prepareExcelData($activeWorksheet, $products);
+        $writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment; filename=products.xlsx');
+        $writer->save('php://output');
+        exit;
+    }
+
+    private function prepareExcelData(Worksheet $activeWorksheet, Collection $products)
+    {
+        $columns = ['Title', 'Short description', 'Price', 'Sale price', 'Description', 'Category name', 'Status', 'Created at'];
+        for ($i = 0; $i < count($columns); $i++) {
+            $activeWorksheet->setCellValue(chr(65 + $i) . '1', $columns[$i]);
+        }
+
+        foreach ($products as $key => $product) {
+            $index = $key + 2;
+            $activeWorksheet->setCellValue('A' .  $index, $product->title);
+            $activeWorksheet->setCellValue('B' .  $index, $product->short_description);
+            $activeWorksheet->setCellValue('C' .  $index, $product->price);
+            $activeWorksheet->setCellValue('D' .  $index, $product->sale_price);
+            $activeWorksheet->setCellValue('E' .  $index, $product->description);
+            $activeWorksheet->setCellValue('F' .  $index, $product->category?->name);
+            $activeWorksheet->setCellValue('G' .  $index, $product->status);
+            $activeWorksheet->setCellValue('H' .  $index, $product->created_at);
+        }
     }
 }
