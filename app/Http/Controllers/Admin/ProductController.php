@@ -115,4 +115,9 @@ class ProductController extends Controller
     {
         $this->productService->downloadExcel(Product::all());
     }
+
+    public function uploadExcel()
+    {
+        $this->productService->uploadExcel();
+    }
 }
