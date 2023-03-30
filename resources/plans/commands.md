@@ -11,3 +11,4 @@
 ### Запуска конкретного сида `php artisan db:seed --class=TestSeeder`
 ### Создание валидатора request `php artisan make:request CreateProductRequest`
 ### Создание посредника `php artisan make:middleware AdminMiddleware`
+### Создание ресурса `php artisan make:resource ProductResource`

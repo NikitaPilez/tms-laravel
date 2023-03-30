@@ -14,6 +14,8 @@
 [Валидация запросов](https://laravel.su/docs/8.x/validation)
 [Мутаторы и аксессоры](https://laravel.su/docs/8.x/eloquent-mutators)
 [Посредники](https://laravel.su/docs/8.x/middleware)
+[Сессии](https://laravel.su/docs/8.x/session)
+[Ресурсы](https://laravel.su/docs/8.x/eloquent-resources)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone

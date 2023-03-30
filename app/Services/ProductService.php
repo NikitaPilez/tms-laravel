@@ -14,7 +14,7 @@ class ProductService
 {
     public function getProducts(array $params)
     {
-        $products = Product::query()->with(['reviews', 'category']);
+        $products = Product::query()->with(['reviews', 'category'])->where('is_active', 1);
 
         $products = match ($params['sort'] ?? null) {
             'rating' => $products->withAvg('reviews', 'star_count')->groupBy('id')->orderByDesc('reviews_avg_star_count'),
@@ -31,7 +31,7 @@ class ProductService
             $products->where('price', '<', $params['price-max']);
         }
 
-        return $products->where('is_active', 1)->paginate(12);
+        return $products->paginate(12);
     }
 
     public function createProductImage(UploadedFile $uploadedFile)
