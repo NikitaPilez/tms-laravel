@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Mail\SuccessRegister;
 use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -53,7 +54,9 @@ class AuthController extends Controller
             'password' => Hash::make($validated['password'])
         ]);
 
-        Mail::to('pileznikita99@gmail.com')->send(new SuccessRegister($user));
+        Mail::to($user)->send(new SuccessRegister($user));
+
+        event(new Registered($user));
 
         Auth::login($user);
 

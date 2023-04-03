@@ -16,7 +16,8 @@
 [Посредники](https://laravel.su/docs/8.x/middleware)
 [Сессии](https://laravel.su/docs/8.x/session)
 [Ресурсы](https://laravel.su/docs/8.x/eloquent-resources)
-[отправка электронной почты](https://laravel.su/docs/8.x/mail)
+[Отправка электронной почты](https://laravel.su/docs/8.x/mail)
+[Подтверждение email](https://laravel.su/docs/8.x/verification)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone
