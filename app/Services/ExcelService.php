@@ -40,4 +40,29 @@ class ExcelService
             $activeWorksheet->setCellValue('I' .  $index, $product->created_at);
         }
     }
+
+    public function exportProductToCsv(Collection $products)
+    {
+        header('Content-Type: text/csv');
+        header('Content-Disposition: attachment; filename=data.csv');
+
+        $f = fopen('php://output', 'w');
+        fputcsv($f, ['ID', 'Title', 'Short description', 'Price', 'Sale price', 'Description', 'Category name', 'Status', 'Created at'], ';');
+
+        foreach ($products as $product) {
+            $data = [
+                $product->id,
+                $product->title,
+                $product->short_description,
+                $product->price,
+                $product->sale_price,
+                $product->description,
+                $product->category?->name,
+                $product->is_active == 1 ? 'Активен' : 'Не активен',
+                $product->created_at
+            ];
+            fputcsv($f, $data, ';');
+        }
+        exit;
+    }
 }

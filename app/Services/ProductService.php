@@ -5,13 +5,9 @@ namespace App\Services;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\UploadedFile;
 use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Worksheet\Row;
-use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
-use PhpOffice\PhpSpreadsheet\Writer\Xlsx as WriterXlsx;
 
 class ProductService
 {
@@ -51,31 +47,6 @@ class ProductService
 //        Storage::put('/products', $uploadedFile);
 
         return $productImage;
-    }
-
-    public function downloadCsv(Collection $products)
-    {
-        header('Content-Type: text/csv');
-        header('Content-Disposition: attachment; filename=products.csv');
-
-        $f = fopen('php://output', 'w');
-        fputcsv($f, ['ID', 'Title', 'Short description', 'Price', 'Sale price', 'Description', 'Category name', 'Status', 'Created at'], ';');
-
-        foreach ($products as $product) {
-            $data = [
-                $product->id,
-                $product->title,
-                $product->short_description,
-                $product->price,
-                $product->sale_price,
-                $product->description,
-                $product->category?->name,
-                $product->is_active == 1 ? 'Активен' : 'Не активен',
-                $product->created_at
-            ];
-            fputcsv($f, $data, ';');
-        }
-        exit;
     }
 
     public function uploadExcel()

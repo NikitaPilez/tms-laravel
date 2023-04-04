@@ -19,7 +19,7 @@
             <div class="row mb-3">
                 <div class="col-lg-6">
                     <a href="{{ route('admin.products.create') }}" class="btn btn-light"><i class="icon-plus"></i>Add Record</a>
-                    <a href="{{ route('admin.products.download.csv') }}" class="btn btn-light"><i class="icon-plus"></i>Export to csv</a>
+                    <a href="{{ route('admin.products.export.csv') }}" class="btn btn-light"><i class="icon-plus"></i>Export to csv</a>
                     <a href="{{ route('admin.products.export.excel') }}" class="btn btn-light"><i class="icon-plus"></i>Export to excel</a>
                 </div>
             </div>

@@ -109,9 +109,9 @@ class ProductController extends Controller
         return back();
     }
 
-    public function downloadCsv()
+    public function exportCsv()
     {
-        $this->productService->downloadCsv(Product::all());
+        $this->excelService->exportProductToCsv(Product::all());
     }
 
     public function exportExcel()

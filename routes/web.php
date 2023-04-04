@@ -49,7 +49,7 @@ Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class
 Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
         Route::get('/', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('index');
-        Route::get('/download-csv', [\App\Http\Controllers\Admin\ProductController::class, 'downloadCsv'])->name('download.csv');
+        Route::get('/export-csv', [\App\Http\Controllers\Admin\ProductController::class, 'exportCsv'])->name('export.csv');
         Route::get('/export-excel', [\App\Http\Controllers\Admin\ProductController::class, 'exportExcel'])->name('export.excel');
 
         Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('create.view');
