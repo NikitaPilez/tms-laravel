@@ -7,17 +7,20 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
+use App\Services\ExcelService;
 use App\Services\ProductService;
 use Illuminate\Http\UploadedFile;
 
 class ProductController extends Controller
 {
     private ProductService $productService;
+    private ExcelService $excelService;
 
-    public function __construct(ProductService $productService)
+    public function __construct(ProductService $productService, ExcelService $excelService)
     {
         $this->productService = $productService;
         parent::__construct();
+        $this->excelService = $excelService;
     }
 
     /**
@@ -111,9 +114,9 @@ class ProductController extends Controller
         $this->productService->downloadCsv(Product::all());
     }
 
-    public function downloadExcel()
+    public function exportExcel()
     {
-        $this->productService->downloadExcel(Product::all());
+        $this->excelService->exportProductsToExcel(Product::all());
     }
 
     public function uploadExcel()
