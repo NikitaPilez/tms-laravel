@@ -2,12 +2,9 @@
 
 namespace App\Services;
 
-use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\UploadedFile;
-use PhpOffice\PhpSpreadsheet\IOFactory;
-use PhpOffice\PhpSpreadsheet\Worksheet\Row;
 
 class ProductService
 {
@@ -47,46 +44,5 @@ class ProductService
 //        Storage::put('/products', $uploadedFile);
 
         return $productImage;
-    }
-
-    public function uploadExcel()
-    {
-        $reader = IOFactory::createReader('Xlsx');
-        $reader->setReadDataOnly(true);
-        $spreadsheet = $reader->load("products.xlsx");
-        $workSheet = $spreadsheet->getActiveSheet();
-        $lastColumn = $workSheet->getHighestColumn();
-        /** @var Row $row */
-        foreach ($workSheet->getRowIterator() as $rowIndex => $row) {
-            if ($rowIndex != 1) {
-                $array = $workSheet->rangeToArray('A' . $rowIndex . ':' . $lastColumn . $rowIndex);
-                $this->processingProductFromExcel($array[0]);
-            }
-        }
-    }
-
-    private function processingProductFromExcel(array $productData)
-    {
-        $product = Product::query()->find($productData[0]);
-
-        if (!$product) {
-            $category = Category::query()->where('name', $productData[6])->first();
-            if (!$category && $productData[6]) {
-                $category = Category::query()->create([
-                    'name' => $productData[6],
-                ]);
-            }
-
-            return Product::query()->create([
-                'title' => $productData[1],
-                'short_description' => $productData[2],
-                'price' => $productData[3],
-                'sale_price' => $productData[4],
-                'description' => $productData[5],
-                'category_id' => $category ? $category->id : null
-            ]);
-        }
-
-        return $product;
     }
 }

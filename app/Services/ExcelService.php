@@ -2,8 +2,12 @@
 
 namespace App\Services;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Collection;
+use PhpOffice\PhpSpreadsheet\IOFactory;
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Worksheet\Row;
 use PhpOffice\PhpSpreadsheet\Worksheet\Worksheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
@@ -64,5 +68,46 @@ class ExcelService
             fputcsv($f, $data, ';');
         }
         exit;
+    }
+
+    public function importProductsFromExcel()
+    {
+        $reader = IOFactory::createReader('Xlsx');
+        $reader->setReadDataOnly(true);
+        $spreadsheet = $reader->load("products.xlsx");
+        $workSheet = $spreadsheet->getActiveSheet();
+        $lastColumn = $workSheet->getHighestColumn();
+        /** @var Row $row */
+        foreach ($workSheet->getRowIterator() as $rowIndex => $row) {
+            if ($rowIndex != 1) {
+                $array = $workSheet->rangeToArray('A' . $rowIndex . ':' . $lastColumn . $rowIndex);
+                $this->processingProductFromExcel($array[0]);
+            }
+        }
+    }
+
+    private function processingProductFromExcel(array $productData)
+    {
+        $product = Product::query()->find($productData[0]);
+
+        if (!$product) {
+            $category = Category::query()->where('name', $productData[6])->first();
+            if (!$category && $productData[6]) {
+                $category = Category::query()->create([
+                    'name' => $productData[6],
+                ]);
+            }
+
+            return Product::query()->create([
+                'title' => $productData[1],
+                'short_description' => $productData[2],
+                'price' => $productData[3],
+                'sale_price' => $productData[4],
+                'description' => $productData[5],
+                'category_id' => $category ? $category->id : null
+            ]);
+        }
+
+        return $product;
     }
 }

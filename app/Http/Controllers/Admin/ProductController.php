@@ -121,6 +121,6 @@ class ProductController extends Controller
 
     public function uploadExcel()
     {
-        $this->productService->uploadExcel();
+        $this->excelService->importProductsFromExcel();
     }
 }
