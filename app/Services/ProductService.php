@@ -37,7 +37,7 @@ class ProductService
             'type' => $uploadedFile->getClientOriginalExtension(),
             'mimetype' => $uploadedFile->getMimeType(),
             'size' => $uploadedFile->getSize(),
-            'path' => 'img/products/' . $uploadedFile->getClientOriginalName()
+            'path' => 'img/' . $uploadedFile->getClientOriginalName()
         ]);
 
         $uploadedFile->move(public_path() .  '/img/', $uploadedFile->getClientOriginalName());

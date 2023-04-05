@@ -26,7 +26,7 @@
                                 <div class="grid-item">
                                     <div class="product">
                                         <div class="product-image">
-                                            <a href="{{ route('products.show', ['product' => $product->id]) }}"><img alt="{{ $product->title }}" src="{{ $product->image }}">
+                                            <a href="{{ route('products.show', ['product' => $product->id]) }}"><img alt="{{ $product->title }}" src="{{ asset($product->mainImage()?->path) }}">
                                             </a>
                                             @if(Carbon\Carbon::parse($product->created_at)->diffInDays(now()) > 3)
                                                 <span class="product-new">NEW</span>

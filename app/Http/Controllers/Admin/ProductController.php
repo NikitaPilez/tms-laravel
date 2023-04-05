@@ -61,9 +61,7 @@ class ProductController extends Controller
             }
         }
 
-        session()->flash('success', 'Product has been successfully created');
-
-        return redirect()->route('admin.products.index');
+        return redirect()->route('admin.products.index')->with('success', 'Product has been successfully created');
     }
 
     /**
@@ -92,9 +90,7 @@ class ProductController extends Controller
     {
         $product->update($request->validated());
 
-        session()->flash('success', 'Product has been successfully updated');
-
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Product has been successfully updated');
     }
 
     /**
@@ -104,9 +100,7 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        session()->flash('success', 'Product has been successfully deleted');
-
-        return back();
+        return back()->with('success', 'Product has been successfully deleted');
     }
 
     public function exportCsv()

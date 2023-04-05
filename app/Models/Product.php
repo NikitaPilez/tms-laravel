@@ -72,4 +72,9 @@ class Product extends Model
     {
         $query->where('is_active', 1)->orderByDesc('created_at')->take($take);
     }
+
+    public function mainImage()
+    {
+        return $this->images()->first();
+    }
 }

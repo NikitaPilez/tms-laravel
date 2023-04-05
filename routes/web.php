@@ -37,7 +37,7 @@ Route::group(['prefix' => '/account', 'controller' => AccountController::class, 
 Route::group(['prefix' => '/cart', 'controller' => CartController::class], function () {
     Route::get('/', 'getCart')->name('cart.get');
     Route::post('/{product}/add', 'add')->name('cart.add');
-    Route::post('/{product}/remove', 'remove')->name('cart.remove');
+    Route::get('/{product}/remove', 'remove')->name('cart.remove');
 });
 
 Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class, 'middleware' => 'auth'], function () {
@@ -63,7 +63,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], 
     });
 });
 
-Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
 Route::get('/about', [MainController::class, 'about'])->name('about');

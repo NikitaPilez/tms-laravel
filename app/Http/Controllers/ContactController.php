@@ -30,8 +30,6 @@ class ContactController extends Controller
             'file_id' => isset($file) ? $file->id : null
         ]);
 
-        session()->flash('success', 'Added!');
-
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Successfully send!');
     }
 }

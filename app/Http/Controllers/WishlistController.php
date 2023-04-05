@@ -23,9 +23,7 @@ class WishlistController extends Controller
             $user->wishlist()->attach($product);
         }
 
-        session()->flash('success', 'Added!');
-
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Added');
     }
 
     public function delete(Product $product)
