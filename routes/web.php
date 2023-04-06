@@ -11,6 +11,12 @@ use App\Http\Controllers\WishlistController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
+Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLang');
+Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout')->middleware('auth');
+Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
+Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
+Route::get('/about', [MainController::class, 'about'])->name('about');
+Route::get('/sales', [MainController::class, 'sales'])->name('sales');
 
 Route::get('/email/verify', [VerificationController::class, 'view'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'handle'])->middleware(['auth', 'signed'])->name('verification.verify');
@@ -62,9 +68,3 @@ Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], 
         Route::get('/delete/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('delete');
     });
 });
-
-Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout')->middleware('auth');
-Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
-Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
-Route::get('/about', [MainController::class, 'about'])->name('about');
-Route::get('/sales', [MainController::class, 'sales'])->name('sales');

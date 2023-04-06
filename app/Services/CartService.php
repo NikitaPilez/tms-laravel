@@ -42,9 +42,11 @@ class CartService
         $cart = session()->get('cart');
         $sum = 0;
 
-        foreach ($cart as $key => $item) {
-            $product = Product::find($key);
-            $sum += ($item['quantity'] * $product->price);
+        if ($cart) {
+            foreach ($cart as $key => $item) {
+                $product = Product::find($key);
+                $sum += ($item['quantity'] * $product->price);
+            }
         }
 
         return $sum;

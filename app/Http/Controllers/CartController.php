@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Services\CartService;
-use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
@@ -28,7 +27,7 @@ class CartController extends Controller
         $cart = session()->get('cart');
 
         return view('cart', [
-            'products' => Product::query()->whereIn('id', array_keys($cart))->get(),
+            'products' => $cart ? Product::query()->whereIn('id', array_keys($cart))->get() : null,
             'cart' => $cart,
             'totalSum' => $this->cartService->getTotalCartSum()
         ]);

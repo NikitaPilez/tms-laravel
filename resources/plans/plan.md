@@ -18,6 +18,7 @@
 [Ресурсы](https://laravel.su/docs/8.x/eloquent-resources)
 [Отправка электронной почты](https://laravel.su/docs/8.x/mail)
 [Подтверждение email](https://laravel.su/docs/8.x/verification)
+[Локализация](https://laravel.su/docs/8.x/localization)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone
