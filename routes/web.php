@@ -52,7 +52,7 @@ Route::group(['prefix' => '/wishlist', 'controller' => WishlistController::class
     Route::post('/{product}/add', 'add')->name('wishlist.add');
 });
 
-Route::group(['prefix' => '/admin', 'middleware' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['prefix' => '/admin', 'middleware' => ['admin', 'verified'], 'as' => 'admin.'], function () {
     Route::group(['prefix' => '/products', 'as' => 'products.'], function () {
         Route::get('/', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('index');
         Route::get('/export-csv', [\App\Http\Controllers\Admin\ProductController::class, 'exportCsv'])->name('export.csv');
