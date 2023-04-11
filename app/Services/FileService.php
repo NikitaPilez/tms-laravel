@@ -14,10 +14,10 @@ class FileService
             'type' => $uploadedFile->getClientOriginalExtension(),
             'mimetype' => $uploadedFile->getMimeType(),
             'size' => $uploadedFile->getSize(),
-            'path' => '/app/public/' . $uploadedFile->getClientOriginalName()
+            'path' => '/feedback/' . $uploadedFile->getClientOriginalName()
         ]);
 
-        $uploadedFile->move(storage_path() . '/app/public', $uploadedFile->getClientOriginalName());
+        $uploadedFile->storeAs('/feedback/', $uploadedFile->getClientOriginalName(), 'local');
 
         return $file;
     }

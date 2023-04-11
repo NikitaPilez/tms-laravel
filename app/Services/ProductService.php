@@ -37,12 +37,10 @@ class ProductService
             'type' => $uploadedFile->getClientOriginalExtension(),
             'mimetype' => $uploadedFile->getMimeType(),
             'size' => $uploadedFile->getSize(),
-            'path' => 'img/' . $uploadedFile->getClientOriginalName()
+            'path' => '/products/' . $uploadedFile->getClientOriginalName()
         ]);
 
-        $uploadedFile->move(public_path() .  '/img/', $uploadedFile->getClientOriginalName());
-//        Storage::put('/products', $uploadedFile);
-
+        $uploadedFile->storeAs('/products/', $uploadedFile->getClientOriginalName(), 'public');
         return $productImage;
     }
 }
