@@ -6,6 +6,7 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\WishlistController;
@@ -13,11 +14,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
 Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLang');
-Route::get('/checkout', [MainController::class, 'checkout'])->name('checkout')->middleware('auth');
 Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/sales', [MainController::class, 'sales'])->name('sales');
+Route::post('/order/create', [OrderController::class, 'createOrder'])->name('order.create');
 
 Route::get('/email/verify', [VerificationController::class, 'view'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'handle'])->middleware(['auth', 'signed'])->name('verification.verify');

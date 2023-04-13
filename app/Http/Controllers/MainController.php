@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Banner;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
@@ -15,16 +16,6 @@ class MainController extends Controller
         return view('main', [
             'banners' => $banners
         ]);
-    }
-
-    public function cart()
-    {
-        return view('cart');
-    }
-
-    public function checkout()
-    {
-        return view('checkout');
     }
 
     public function changeLang(Request $request)

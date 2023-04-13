@@ -43,7 +43,7 @@
                                 </td>
                                 <td class="cart-product-thumbnail">
                                     <a href="{{ route('products.show', ['product' => $product->id]) }}">
-                                        <img src="{{ $product->mainImage()?->path }}" alt="{{ $product->title }}">
+                                        <img src="{{ asset('/storage/' . $product->mainImage()?->path) }}" alt="{{ $product->title }}">
                                     </a>
                                 </td>
                                 <td>
@@ -66,32 +66,42 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="row">
-                        <hr class="space">
-                        <div class="col-lg-6 p-r-10">
-                            <div class="table-responsive">
-                                <h4>Cart Subtotal</h4>
-                                <table class="table">
-                                    <tbody>
-                                    <tr>
-                                        <td class="cart-product-name">
-                                            <strong>Cart Subtotal</strong>
-                                        </td>
-                                        <td class="cart-product-name text-right">
-                                            <span class="amount">${{ $totalSum }}</span>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                    <form method="POST" action="{{ route('order.create') }}">
+                        @csrf
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <h4 class="upper">Additional information</h4>
                             </div>
-                            @auth
-                                <a href="{{ route('checkout') }}" class="btn icon-left float-right"><span>Proceed to Checkout</span></a>
-                            @endauth
-                            @guest
-                                <a href="#" data-target="#modal-checkout" data-toggle="modal" class="btn icon-left float-right"><span>Proceed to Checkout</span></a>
-                            @endguest
+                            <div class="col-lg-6 form-group">
+                                <label class="sr-only">First Name</label>
+                                <input type="text" class="form-control" name="first_name" placeholder="First Name" value="{{ $user?->information?->first_name }}">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="sr-only">Last Name</label>
+                                <input type="text" class="form-control" name="last_name" placeholder="Last Name" value="{{ $user?->information?->last_name }}">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <label class="sr-only">Address</label>
+                                <input type="text" class="form-control" name="address" placeholder="Address" value="">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="sr-only">Email</label>
+                                <input type="text" class="form-control" name="email" placeholder="Email" value="{{ $user?->email }}">
+                            </div>
+                            <div class="col-lg-6 form-group">
+                                <label class="sr-only">Phone</label>
+                                <input type="text" class="form-control" name="phone" placeholder="Phone" value="{{ $user?->phone }}">
+                            </div>
+                            <div class="col-lg-12 form-group">
+                                <div class="panel panel-naked">
+                                    <div class="panel-heading">
+                                        <h3>Cart subtotal ${{ $totalSum }}</h3>
+                                        <button type="submit" class="btn icon-left"><span>Create order</span></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </section>
