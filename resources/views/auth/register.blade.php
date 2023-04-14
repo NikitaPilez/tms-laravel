@@ -38,6 +38,8 @@
                                 </div>
                                 <div class="col-lg-12 form-group">
                                     <button class="btn" type="submit">Register New Account </button>
+                                    <p class="small">Auth via google <a href="{{ route('google.redirect') }}"><i class="fa-google fab"></i></a></p>
+                                    <p class="small">Auth via github <a href="{{ route('github.redirect') }}"><i class="fa-github fab"></i></a></p>
                                 </div>
                             </div>
                         </form>

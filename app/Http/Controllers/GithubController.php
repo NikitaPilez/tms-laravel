@@ -3,26 +3,27 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
-class GoogleController extends Controller
+class GithubController extends Controller
 {
     public function redirect()
     {
-        return Socialite::driver('google')->redirect();
+        return Socialite::driver('github')->redirect();
     }
 
     public function callback()
     {
-        $googleUser = Socialite::driver('google')->user();
+        $githubUser = Socialite::driver('github')->user();
 
-        $email = $googleUser->getEmail();
+        $email = $githubUser->getEmail();
         $user = User::query()->where('email', $email)->first();
         if (!$user) {
             $user = User::query()->create([
                 'email' => $email,
-                'name' => $googleUser->getName()
+                'name' => $githubUser->getName()
             ]);
         }
 
