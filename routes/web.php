@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgetPasswordController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
@@ -75,3 +76,6 @@ Route::group(['prefix' => '/admin', 'middleware' => ['admin', 'verified'], 'as' 
         Route::get('/delete/{product}', [\App\Http\Controllers\Admin\ProductController::class, 'destroy'])->name('delete');
     });
 });
+
+Route::get('/google/auth/redirect/', [GoogleController::class, 'redirect'])->name('google.redirect');
+Route::get('/google/auth/callback/', [GoogleController::class, 'callback'])->name('google.callback');
