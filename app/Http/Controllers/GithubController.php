@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Http\Request;
+use App\Services\AuthService;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -14,19 +13,11 @@ class GithubController extends Controller
         return Socialite::driver('github')->redirect();
     }
 
-    public function callback()
+    public function callback(AuthService $authService)
     {
         $githubUser = Socialite::driver('github')->user();
-
-        $email = $githubUser->getEmail();
-        $user = User::query()->where('email', $email)->first();
-        if (!$user) {
-            $user = User::query()->create([
-                'email' => $email,
-                'name' => $githubUser->getName()
-            ]);
-        }
-
+        $user = $authService->getInternalUser($githubUser, 'github');
+        $authService->githubUpdateAdditionalUserInformation($githubUser, $user);
         Auth::login($user);
 
         return redirect()->route('main')->with('success', 'Success logged in');

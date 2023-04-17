@@ -12,7 +12,6 @@ class ForgetPasswordController extends Controller
 
     public function __construct(ForgetPasswordService $forgetPasswordService)
     {
-        parent::__construct();
         $this->forgetPasswordService = $forgetPasswordService;
     }
 

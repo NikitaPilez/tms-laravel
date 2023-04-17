@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Services\AuthService;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -13,19 +13,11 @@ class GoogleController extends Controller
         return Socialite::driver('google')->redirect();
     }
 
-    public function callback()
+    public function callback(AuthService $authService)
     {
         $googleUser = Socialite::driver('google')->user();
-
-        $email = $googleUser->getEmail();
-        $user = User::query()->where('email', $email)->first();
-        if (!$user) {
-            $user = User::query()->create([
-                'email' => $email,
-                'name' => $googleUser->getName()
-            ]);
-        }
-
+        $user = $authService->getInternalUser($googleUser, 'google');
+        $authService->googleUpdateAdditionalUserInformation($googleUser, $user);
         Auth::login($user);
 
         return redirect()->route('main')->with('success', 'Success logged in');

@@ -19,6 +19,8 @@
 [Отправка электронной почты](https://laravel.su/docs/8.x/mail)
 [Подтверждение email](https://laravel.su/docs/8.x/verification)
 [Локализация](https://laravel.su/docs/8.x/localization)
+[Авторизация через социальные сети](https://laravel.su/docs/8.x/socialite)
+[Google авторизация](https://developers.google.com/identity/protocols/oauth2?hl=ru)
 
 ## План по установке приложения:
 * Клонируем приложение через git clone

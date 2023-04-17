@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateOrderRequest;
 use App\Services\OrderService;
-use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
@@ -12,7 +11,6 @@ class OrderController extends Controller
 
     public function __construct(OrderService $orderService)
     {
-        parent::__construct();
         $this->orderService = $orderService;
     }
 
