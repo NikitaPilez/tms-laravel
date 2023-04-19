@@ -22,6 +22,10 @@
 [Авторизация через социальные сети](https://laravel.su/docs/8.x/socialite)
 [Google авторизация](https://developers.google.com/identity/protocols/oauth2?hl=ru)
 
+[Ссылки по оплате](https://www.youtube.com/watch?v=gkc1GcBKh1M)
+[Ссылки по оплате](https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=checkout)
+[Ссылки по оплате](https://stripe.com/docs/api/checkout/sessions/create)
+
 ## План по установке приложения:
 * Клонируем приложение через git clone
 * Копируем .env.example в .env и заполняем нужные данные (например доступы к БД)

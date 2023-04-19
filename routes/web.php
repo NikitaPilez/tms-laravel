@@ -9,6 +9,7 @@ use App\Http\Controllers\GithubController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\WishlistController;
@@ -21,6 +22,8 @@ Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('cont
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/sales', [MainController::class, 'sales'])->name('sales');
 Route::post('/order/create', [OrderController::class, 'createOrder'])->name('order.create');
+Route::get('/order/{order}/payment/redirect', [PaymentController::class, 'redirect'])->name('payment.redirect');
+Route::get('/order/payment/{hash}', [PaymentController::class, 'callback'])->name('payment.callback');
 
 Route::get('/email/verify', [VerificationController::class, 'view'])->middleware('auth')->name('verification.notice');
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'handle'])->middleware(['auth', 'signed'])->name('verification.verify');
