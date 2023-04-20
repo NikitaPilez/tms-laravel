@@ -20,9 +20,9 @@ class PaymentController extends Controller
     {
         $successPayment = $order->payments()->where('status', 'complete')->get();
 
-//        if ($successPayment) {
-//            return redirect()->route('cart.get')->with('success', 'Already paid');
-//        }
+        if ($successPayment) {
+            return redirect()->route('cart.get')->with('success', 'Already paid');
+        }
 
         $paymentHash = Str::random(40);
         $session = $this->paymentService->createPayment($order, $paymentHash);
