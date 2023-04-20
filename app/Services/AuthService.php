@@ -10,13 +10,13 @@ class AuthService
 {
     public function getInternalUser(SocialUser $socialUser, string $provider)
     {
-        $socialId = $socialUser->getEmail();
+        $socialId = $socialUser->getId();
         $user = User::query()->where('social_id', $socialId)->first();
 
         if (!$user) {
             $user = User::query()->create([
                 'name' => $socialUser->getName(),
-                'social_id' => $socialUser->getId(),
+                'social_id' => $socialId,
                 'provider' => $provider,
             ]);
         }
