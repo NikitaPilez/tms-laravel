@@ -18,7 +18,6 @@ class ProductController extends Controller
     public function __construct(ProductService $productService)
     {
         $this->productService = $productService;
-        parent::__construct();
     }
 
     public function index(GetProductsRequest $request)

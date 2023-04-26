@@ -21,6 +21,7 @@
 [Локализация](https://laravel.su/docs/8.x/localization)
 [Авторизация через социальные сети](https://laravel.su/docs/8.x/socialite)
 [Google авторизация](https://developers.google.com/identity/protocols/oauth2?hl=ru)
+[События](https://laravel.su/docs/8.x/events)
 
 [Ссылки по оплате](https://www.youtube.com/watch?v=gkc1GcBKh1M)
 [Ссылки по оплате](https://stripe.com/docs/payments/accept-a-payment?platform=web&ui=checkout)
