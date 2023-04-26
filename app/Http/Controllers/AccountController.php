@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\ChangePassword;
 use App\Helpers\Country;
 use App\Http\Requests\AccountRequest;
+use App\Http\Requests\ChangePasswordRequest;
 use App\Services\AccountService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -26,5 +28,14 @@ class AccountController extends Controller
     {
         $accountService->updateAccount($request->validated());
         return back();
+    }
+
+    public function changePassword(ChangePasswordRequest $request)
+    {
+        ChangePassword::dispatch($request->user());
+
+        // update password
+
+        return redirect()->back();
     }
 }

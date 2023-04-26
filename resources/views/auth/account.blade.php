@@ -120,6 +120,29 @@
                         </form>
                     </div>
                 </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Update password</h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('account.changePassword') }}">
+                            @csrf
+                            <div class="form-group">
+                                <label class="form-label">Old password</label>
+                                <input type="password" class="form-control" name="old_password" placeholder="Old password">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">New password</label>
+                                <input type="password" class="form-control" name="new_password" placeholder="New password">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">New password confirm</label>
+                                <input type="password" class="form-control" name="new_password_confirmation" placeholder="New password confirmation">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Events\ChangePassword;
 use App\Listeners\SaveUserLoginInfo;
 use App\Listeners\SendLoggedUserNotification;
+use App\Listeners\SendUpdatePasswordNotification;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -24,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
         Login::class => [
             SendLoggedUserNotification::class,
             SaveUserLoginInfo::class
+        ],
+        ChangePassword::class => [
+            SendUpdatePasswordNotification::class
         ]
     ];
 
