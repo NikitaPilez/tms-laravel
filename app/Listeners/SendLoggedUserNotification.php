@@ -2,9 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\UserLogged;
 use App\Mail\NewLoginMail;
-use App\Models\User;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
