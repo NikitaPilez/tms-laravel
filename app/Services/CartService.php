@@ -37,14 +37,13 @@ class CartService
         }
     }
 
-    public function getTotalCartSum()
+    public function getTotalCartSum(array $cart)
     {
-        $cart = session()->get('cart');
         $sum = 0;
 
         if ($cart) {
             foreach ($cart as $key => $item) {
-                $product = Product::find($key);
+                $product = Product::query()->find($key);
                 $sum += ($item['quantity'] * $product->price);
             }
         }

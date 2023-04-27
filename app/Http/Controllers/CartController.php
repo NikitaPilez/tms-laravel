@@ -29,7 +29,7 @@ class CartController extends Controller
         return view('cart', [
             'products' => $cart ? Product::query()->whereIn('id', array_keys($cart))->get() : null,
             'cart' => $cart,
-            'totalSum' => $this->cartService->getTotalCartSum(),
+            'totalSum' => $this->cartService->getTotalCartSum($cart),
             'user' => Auth::user()
         ]);
     }
