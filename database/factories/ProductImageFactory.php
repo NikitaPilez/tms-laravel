@@ -19,8 +19,7 @@ class ProductImageFactory extends Factory
     {
         return [
             'product_id' => Product::query()->inRandomOrder()->first()->id,
-            'image' => 'https://source.unsplash.com/random/1360x720',
-            'is_active' => 1
+            'name' => $this->faker->word()
         ];
     }
 }

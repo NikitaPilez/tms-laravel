@@ -21,8 +21,7 @@ class ProductFactory extends Factory
             'title' => $this->faker->word(),
             'description' => $this->faker->text(),
             'short_description' => $this->faker->sentence(),
-            'category_id' => Category::query()->inRandomOrder()->first()->id,
-            'image' => 'https://source.unsplash.com/random/640x480',
+            'category_id' => Category::query()->inRandomOrder()->first()?->id,
             'is_active' => 1,
             'price' => rand(5,2000)
         ];

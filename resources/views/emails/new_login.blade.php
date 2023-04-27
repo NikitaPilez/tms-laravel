@@ -20,7 +20,7 @@
 </style>
 <body>
 <div class="card">
-    <p>New login {{ $user->name }} OS: {{ $_SERVER['HTTP_SEC_CH_UA_PLATFORM'] }} IP {{ $_SERVER['REMOTE_ADDR'] }} Browser: {{ $_SERVER['HTTP_USER_AGENT'] }}</p>
+    <p>New login {{ $user->name }} OS: {{ $_SERVER['HTTP_SEC_CH_UA_PLATFORM'] ?? null }} IP {{ $_SERVER['REMOTE_ADDR'] ?? null }} Browser: {{ $_SERVER['HTTP_USER_AGENT'] ?? null }}</p>
 </div>
 </body>
 </html>

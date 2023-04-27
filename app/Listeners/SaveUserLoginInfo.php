@@ -27,8 +27,8 @@ class SaveUserLoginInfo
 
         UserLogin::query()->create([
             'user_id' => $event->user->id,
-            'platform' => $_SERVER['HTTP_SEC_CH_UA_PLATFORM'],
-            'ip' => $_SERVER['REMOTE_ADDR'],
+            'platform' => $_SERVER['HTTP_SEC_CH_UA_PLATFORM'] ?? null,
+            'ip' => $_SERVER['REMOTE_ADDR'] ?? null,
             'browser' => $agent->browser()
         ]);
     }
