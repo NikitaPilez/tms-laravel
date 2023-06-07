@@ -36,6 +36,7 @@ Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword'
 
 Route::group(['prefix' => '/products', 'controller' => ProductController::class], function () {
     Route::get('/', 'products')->name('products.index');
+    Route::get('/search', 'search')->name('products.search');
     Route::get('/{product}', 'product')->name('products.show');
 });
 
