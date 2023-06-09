@@ -20,7 +20,6 @@ Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLa
 Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
 Route::get('/about', [MainController::class, 'about'])->name('about');
-Route::get('/sales', [MainController::class, 'sales'])->name('sales');
 Route::post('/order/create', [OrderController::class, 'createOrder'])->name('order.create');
 Route::get('/order/{order}/payment/redirect', [PaymentController::class, 'redirect'])->name('payment.redirect');
 Route::get('/order/payment/{hash}', [PaymentController::class, 'callback'])->name('payment.callback');
